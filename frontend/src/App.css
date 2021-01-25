@@ -1,0 +1,20 @@
+.main-page {
+  color: #797979;
+  text-align: center;
+}
+
+h1, #maintitle {
+  font-size: 60px;
+}
+
+h4, #subtitle {
+  font-weight: normal;
+}
+
+p {
+  font-size: 20px;
+}
+
+textarea {
+  resize: none;
+}
