@@ -2,6 +2,11 @@ import React from 'react';
 
 import "./About.css";
 
+import profileImage from './profile-placeholder.png'
+
+import Image from 'react-bootstrap/Image';
+
+
 class About extends React.Component {
     render() {
         return (
@@ -14,42 +19,42 @@ class About extends React.Component {
                 <div className="row">
                     <div className="column">
                         <div className="profileCard">
-                            <img src="profile-placeholder.png" alt="Picture" style="width:100%"></img>
+                            <Image width="100%" src={profileImage} ref="abstractImage" />
                             <h3>Name</h3>
                             <p>Description</p>
                         </div>
                     </div>
                     <div className="column">
                         <div className="profileCard">
-                            <img src="profile-placeholder.png" alt="Picture" style="width:100%"></img>
+                            <Image width="100%" src={profileImage} ref="abstractImage" />
                             <h3>Name</h3>
                             <p>Description</p>
                         </div>
                     </div>
                     <div className="column">
                         <div className="profileCard">
-                            <img src="profile-placeholder.png" alt="Picture" style="width:100%"></img>
+                            <Image width="100%" src={profileImage} ref="abstractImage" />
                             <h3>Name</h3>
                             <p>Description</p>
                         </div>
                     </div>
                     <div className="column">
                         <div className="profileCard">
-                            <img src="profile-placeholder.png" alt="Picture" style="width:100%"></img>
+                            <Image width="100%" src={profileImage} ref="abstractImage" />
                             <h3>Name</h3>
                             <p>Description</p>
                         </div>
                     </div>
                     <div className="column">
                         <div className="profileCard">
-                            <img src="profile-placeholder.png" alt="Picture" style="width:100%"></img>
+                            <Image width="100%" src={profileImage} ref="abstractImage" />
                             <h3>Name</h3>
                             <p>Description</p>
                         </div>
                     </div>
                     <div className="column">
                         <div className="profileCard">
-                            <img src="profile-placeholder.png" alt="Picture" style="width:100%"></img>
+                            <Image width="100%" src={profileImage} ref="abstractImage" />
                             <h3>Name</h3>
                             <p>Description</p>
                         </div>

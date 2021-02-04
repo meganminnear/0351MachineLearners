@@ -1,6 +1,6 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
+import './Home.css';
 
 import emptyImage from './empty_image.png';
 import exampleImage from './example_line_plot.png';
@@ -13,7 +13,7 @@ import Tab from 'react-bootstrap/Tab';
 import Image from 'react-bootstrap/Image';
 import Modal from 'react-bootstrap/Modal';
 
-class App extends React.Component {
+class Home extends React.Component {
   constructor(props) {
     super(props);
 
@@ -106,4 +106,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default Home;
