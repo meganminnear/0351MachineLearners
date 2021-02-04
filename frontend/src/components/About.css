@@ -1,0 +1,25 @@
+.profileCard {
+    text-align: center;
+    margin: auto;
+    box-shadow: 0 4px 4px 0 rgb(0,0,0,0.4);
+}
+
+h1, p {
+    font-family: Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif;
+}
+
+h1 {
+    font-weight: heavy;
+}
+
+.row:after {
+    content:"";
+    display: table;
+    clear: both;
+}
+
+.column {
+    width: 16.66%;
+    float: left;
+    padding-right: 10px;
+}
