@@ -11,35 +11,49 @@ class About extends React.Component {
                 <h1>algorithm</h1>
                 <p>explain how our algorithm works</p>
                 <h1>team</h1>
-                <div className="profileCard">
-                    <img src="profile-placeholder.png" alt="Picture" style="width:100%"></img>
-                    <h3>Name</h3>
-                    <p>Description</p>
-                </div>
-                <div className="profileCard">
-                    <img src="profile-placeholder.png" alt="Picture" style="width:100%"></img>
-                    <h3>Name</h3>
-                    <p>Description</p>
-                </div>
-                <div className="profileCard">
-                    <img src="profile-placeholder.png" alt="Picture" style="width:100%"></img>
-                    <h3>Name</h3>
-                    <p>Description</p>
-                </div>
-                <div className="profileCard">
-                    <img src="profile-placeholder.png" alt="Picture" style="width:100%"></img>
-                    <h3>Name</h3>
-                    <p>Description</p>
-                </div>
-                <div className="profileCard">
-                    <img src="profile-placeholder.png" alt="Picture" style="width:100%"></img>
-                    <h3>Name</h3>
-                    <p>Description</p>
-                </div>
-                <div className="profileCard">
-                    <img src="profile-placeholder.png" alt="Picture" style="width:100%"></img>
-                    <h3>Name</h3>
-                    <p>Description</p>
+                <div className="row">
+                    <div className="column">
+                        <div className="profileCard">
+                            <img src="profile-placeholder.png" alt="Picture" style="width:100%"></img>
+                            <h3>Name</h3>
+                            <p>Description</p>
+                        </div>
+                    </div>
+                    <div className="column">
+                        <div className="profileCard">
+                            <img src="profile-placeholder.png" alt="Picture" style="width:100%"></img>
+                            <h3>Name</h3>
+                            <p>Description</p>
+                        </div>
+                    </div>
+                    <div className="column">
+                        <div className="profileCard">
+                            <img src="profile-placeholder.png" alt="Picture" style="width:100%"></img>
+                            <h3>Name</h3>
+                            <p>Description</p>
+                        </div>
+                    </div>
+                    <div className="column">
+                        <div className="profileCard">
+                            <img src="profile-placeholder.png" alt="Picture" style="width:100%"></img>
+                            <h3>Name</h3>
+                            <p>Description</p>
+                        </div>
+                    </div>
+                    <div className="column">
+                        <div className="profileCard">
+                            <img src="profile-placeholder.png" alt="Picture" style="width:100%"></img>
+                            <h3>Name</h3>
+                            <p>Description</p>
+                        </div>
+                    </div>
+                    <div className="column">
+                        <div className="profileCard">
+                            <img src="profile-placeholder.png" alt="Picture" style="width:100%"></img>
+                            <h3>Name</h3>
+                            <p>Description</p>
+                        </div>
+                    </div>
                 </div>
                 <h1>contact</h1>
                 <p>email:</p>
