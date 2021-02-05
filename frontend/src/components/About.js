@@ -59,6 +59,13 @@ class About extends React.Component {
                             <p>Description</p>
                         </div>
                     </div>
+                    <div className="column">
+                        <div className="profileCard">
+                            <Image width="100%" src={profileImage} ref="abstractImage" />
+                            <h3>Name</h3>
+                            <p>Description</p>
+                        </div>
+                    </div>
                 </div>
                 <h2>contact</h2>
                 <p>email:</p>

@@ -11,10 +11,38 @@ h4, #subtitle {
   font-weight: normal;
 }
 
+#subtitle {
+
+}
+
 p {
   font-size: 20px;
 }
 
 textarea {
   resize: none;
+}
+
+#green {
+  background-color: #d1dfd1;
+  border: none;
+  color: black;
+  border-radius: 12px;
+}
+
+#green:hover {
+  background-color: #577257;
+  color: white;
+}
+
+#pink {
+  background-color: rgb(238, 216, 220);
+  border: none;
+  color: black;
+  border-radius: 12px;
+}
+
+#pink:hover {
+  background-color: rgb(175, 143, 149);
+  color: white;
 }

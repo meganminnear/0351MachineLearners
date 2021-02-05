@@ -56,32 +56,30 @@ class Home extends React.Component {
     return (
       <div className="main-page">
         <div className="row justify-content-center ml-0 mr-0">
-          <div className="pt-3 col-lg-8">
-            <h4 className="pb-2" id="subtitle"> Text-sentiment analysis using machine learning </h4>
-            <p> Enter your writing into the box below and the website will draw an image based on the emotions in your writing! </p>
+          <div className="pt-3 col-lg-10">
             <div className="row py-3 ml-0 mr-0">
-              <div className="col-6 px-5">
+              <div className="col-6 px-1 py-5">
                 <Form>
-                  <Form.Group controlId="exampleForm.ControlTextarea1">
-                    <Form.Label>Enter text here:</Form.Label>
-                    <Form.Control as="textarea" rows={8} onChange={this.textUpdate} ref="mainTextArea" />
+                  <Form.Group controlId="exampleForm.ControlTextarea1"> 
+                    <Form.Control as="textarea" rows={10} onChange={this.textUpdate} placeholder="enter text here" ref="mainTextArea" />
                   </Form.Group>
                 </Form>
-                <Button className="mx-2" variant="primary" onClick={this.clearText}>Clear</Button>
-                <Button className="mx-2" variant="primary">Undo</Button>
+                <Button className="mx-2" id="green" variant="primary" onClick={this.clearText}>clear</Button>
+                <Button className="mx-2" id="green" variant="primary">undo</Button>
+                <p id="subtitle">when you enter your writing, it gets analyzed by our algorithm in order to draw an image!</p>
               </div>
-              <div className="col-6 px-5">
+              <div className="col-6 px-3">
                 <Tabs defaultActiveKey="linear" id="figure-tabs">
-                  <Tab eventKey="linear" title="Linear">
+                  <Tab eventKey="linear" title="linear">
                     <Image width="100%" src={emptyImage} ref="diagramImage" />
                   </Tab>
-                  <Tab eventKey="abstract" title="Abstract">
+                  <Tab eventKey="abstract" title="abstract">
                     <Image width="100%" src={emptyImage} ref="abstractImage" />
                   </Tab>
                 </Tabs>
-                <Button className="mx-2" variant="primary" onClick={this.openDownloadModal}>Download CSV</Button>
-                <Button className="mx-2" variant="primary" onClick={this.openDownloadModal}>Download Image</Button>
-                <Button className="mx-2" variant="primary">Share</Button>
+                <Button className="mx-2" id="green" variant="primary" onClick={this.openDownloadModal}>download CSV</Button>
+                <Button className="mx-2" id="pink" variant="primary">share!</Button>
+                <Button className="mx-2" id="green" variant="primary" onClick={this.openDownloadModal}>download image</Button>
               </div>
             </div>
           </div>
