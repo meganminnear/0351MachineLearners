@@ -2,6 +2,7 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Navbar, Nav} from 'react-bootstrap'
 import {LinkContainer} from 'react-router-bootstrap'
+import "./Header.css";
 
 class Header extends React.Component {
   constructor(props) {
@@ -14,12 +15,15 @@ class Header extends React.Component {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
             <LinkContainer to="/">
-              <Nav.Link>Home</Nav.Link>
+              <Nav.Link className="mr-5">home</Nav.Link>
             </LinkContainer>
             <LinkContainer to="/about">
-              <Nav.Link>About</Nav.Link>
+              <Nav.Link className="mr-5">about us</Nav.Link>
             </LinkContainer>
-          </Nav>
+            </Nav>
+            <Navbar.Brand>
+              <h1>The Sentimental Image</h1>
+            </Navbar.Brand>
         </Navbar.Collapse>
       </Navbar>
     );

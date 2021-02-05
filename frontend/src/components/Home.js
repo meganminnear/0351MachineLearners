@@ -57,7 +57,6 @@ class Home extends React.Component {
       <div className="main-page">
         <div className="row justify-content-center ml-0 mr-0">
           <div className="pt-3 col-lg-8">
-            <h1 className="pb-1" id="maintitle"> The Sentimental Image </h1>
             <h4 className="pb-2" id="subtitle"> Text-sentiment analysis using machine learning </h4>
             <p> Enter your writing into the box below and the website will draw an image based on the emotions in your writing! </p>
             <div className="row py-3 ml-0 mr-0">

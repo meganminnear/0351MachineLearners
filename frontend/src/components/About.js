@@ -11,11 +11,11 @@ class About extends React.Component {
     render() {
         return (
             <div className="About">
-                <h1>about</h1>
+                <h2>about</h2>
                 <p>Currently, there is a lack of tools that can be used by writers to visualize the sentiment and emotions of their writing. The Sentimental Image was created to provide writers with a tool that allows them to easily visualize their writings with the help of machine learning. Our website is open to anyone who writes and is looking for ways to visualize the sentiment of their writing and as well as to machine learning enthusiasts.</p>
-                <h1>algorithm</h1>
+                <h2>algorithm</h2>
                 <p>explain how our algorithm works</p>
-                <h1>team</h1>
+                <h2>team</h2>
                 <div className="row">
                     <div className="column">
                         <div className="profileCard">
@@ -60,10 +60,10 @@ class About extends React.Component {
                         </div>
                     </div>
                 </div>
-                <h1>contact</h1>
+                <h2>contact</h2>
                 <p>email:</p>
                 <p>phone number:</p>
-                <h1>additional resources</h1>
+                <h2>additional resources</h2>
                 <ul>
                     <li>Link</li>
                     <li>Link</li>
