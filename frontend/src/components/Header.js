@@ -5,10 +5,6 @@ import {LinkContainer} from 'react-router-bootstrap'
 import "./Header.css";
 
 class Header extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <Navbar>

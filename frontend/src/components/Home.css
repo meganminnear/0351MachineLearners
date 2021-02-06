@@ -3,6 +3,10 @@
   text-align: center;
 }
 
+.no-border {
+  border: none !important;
+}
+
 h1, #maintitle {
   font-size: 60px;
 }
@@ -21,6 +25,10 @@ p {
 
 textarea {
   resize: none;
+}
+
+.share-modal {
+    min-width: 30%;
 }
 
 #green {
