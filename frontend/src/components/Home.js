@@ -86,7 +86,13 @@ class Home extends React.Component {
     this.refs.mainTextArea.value = "";
   }
 
-  downloadImage
+  downloadImageFile = () => {
+    const e = document.createElement("a");
+    e.href = {exampleImage};
+    document.body.appendChild(e);
+    e.click();
+    document.body.removeChild(e);
+  }
 
   render() {
     return (
@@ -121,32 +127,37 @@ class Home extends React.Component {
           </div>
         </div>
 
+        {/* Download Modal to download a CSV file */}
         <Modal show={this.state.showCSVDownloadModal} onHide={this.closeCSVDownloadModal}>
           <Modal.Header closeButton>
-            <Modal.Title>Download?</Modal.Title>
+            <Modal.Title>Download CSV?</Modal.Title>
           </Modal.Header>
-          <Modal.Body>Are you sure you want to download?</Modal.Body>
+          <Modal.Body>Are you sure you want to download the CSV?</Modal.Body>
           <Modal.Footer>
             <Button variant="secondary" onClick={this.closeCSVDownloadModal}>
               Cancel
             </Button>
-            <Button variant="primary" onClick={this.closeCSVDownloadModal}> {/* file download button */}
-              Download
-            </Button>
+            <Button variant="primary" onClick={this.downloadImageFile}>
+                Download
+              </Button>
           </Modal.Footer>
         </Modal>
+        
+        {/* Download Modal to download a 2D image */}
         <Modal show={this.state.showImageDownloadModal} onHide={this.closeImageDownloadModal}>
           <Modal.Header closeButton>
-            <Modal.Title>Download?</Modal.Title>
+            <Modal.Title>Download Image?</Modal.Title>
           </Modal.Header>
-          <Modal.Body>Are you sure you want to download?</Modal.Body>
+          <Modal.Body>Are you sure you want to download the image?</Modal.Body>
           <Modal.Footer>
             <Button variant="secondary" onClick={this.closeImageDownloadModal}>
               Cancel
             </Button>
-            <Button variant="primary" onClick={this.closeImageDownloadModal}>
-              Download
-            </Button>
+            <a href={exampleImage} download="Sentiment-2D.png">
+              <Button variant="primary" onClick={this.closeImageDownloadModal}>
+                Download
+              </Button>
+            </a> 
           </Modal.Footer>
         </Modal>
 
