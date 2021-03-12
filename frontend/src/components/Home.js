@@ -22,14 +22,17 @@ class Home extends React.Component {
     super(props);
 
     this.state = {
-      showDownloadModal : false,
+      showCSVDownloadModal : false,
+      showImageDownloadModal : false,
       showShareModal: false
     };
 
     this.textUpdate = this.textUpdate.bind(this);
     this.clearText = this.clearText.bind(this);
-    this.openDownloadModal = this.openDownloadModal.bind(this);
-    this.closeDownloadModal = this.closeDownloadModal.bind(this);
+    this.openImageDownloadModal = this.openImageDownloadModal.bind(this);
+    this.closeImageDownloadModal = this.closeImageDownloadModal.bind(this);
+    this.openCSVDownloadModal = this.openCSVDownloadModal.bind(this);
+    this.closeCSVDownloadModal = this.closeCSVDownloadModal.bind(this);
     this.openShareModal = this.openShareModal.bind(this);
     this.closeShareModal = this.closeShareModal.bind(this);
   }
@@ -41,15 +44,27 @@ class Home extends React.Component {
     }.bind(this), 1000);
   }
 
-  openDownloadModal() {
+  openImageDownloadModal() {
     this.setState({
-      showDownloadModal : true
+      showImageDownloadModal : true
     });
   }
 
-  closeDownloadModal() {
+  closeImageDownloadModal() {
     this.setState({
-      showDownloadModal : false
+      showImageDownloadModal : false
+    });
+  }
+
+  openCSVDownloadModal() {
+    this.setState({
+      showCSVDownloadModal : true
+    });
+  }
+
+  closeCSVDownloadModal() {
+    this.setState({
+      showCSVDownloadModal : false
     });
   }
 
@@ -70,6 +85,8 @@ class Home extends React.Component {
     this.refs.abstractImage.src = emptyImage;
     this.refs.mainTextArea.value = "";
   }
+
+  downloadImage
 
   render() {
     return (
@@ -96,38 +113,38 @@ class Home extends React.Component {
                     <Image width="100%" src={emptyImage} ref="abstractImage" />
                   </Tab>
                 </Tabs>
-                <Button className="mx-2" id="green" variant="primary" onClick={this.openDownloadModal}>download CSV</Button>
+                <Button className="mx-2" id="green" variant="primary" onClick={this.openCSVDownloadModal}>download CSV</Button>
                 <Button className="mx-2" id="pink" variant="primary" onClick={this.openShareModal}>share!</Button>
-                <Button className="mx-2" id="green" variant="primary" onClick={this.openDownloadModal}>download image</Button>
+                <Button className="mx-2" id="green" variant="primary" onClick={this.openImageDownloadModal}>download image</Button>
               </div>
             </div>
           </div>
         </div>
 
-        <Modal show={this.state.showDownloadModal} onHide={this.closeDownloadModal}>
+        <Modal show={this.state.showCSVDownloadModal} onHide={this.closeCSVDownloadModal}>
           <Modal.Header closeButton>
             <Modal.Title>Download?</Modal.Title>
           </Modal.Header>
           <Modal.Body>Are you sure you want to download?</Modal.Body>
           <Modal.Footer>
-            <Button variant="secondary" onClick={this.closeDownloadModal}>
+            <Button variant="secondary" onClick={this.closeCSVDownloadModal}>
               Cancel
             </Button>
-            <Button variant="primary" onClick={this.closeDownloadModal}>
+            <Button variant="primary" onClick={this.closeCSVDownloadModal}> {/* file download button */}
               Download
             </Button>
           </Modal.Footer>
         </Modal>
-        <Modal show={this.state.showDownloadModal} onHide={this.closeDownloadModal}>
+        <Modal show={this.state.showImageDownloadModal} onHide={this.closeImageDownloadModal}>
           <Modal.Header closeButton>
             <Modal.Title>Download?</Modal.Title>
           </Modal.Header>
           <Modal.Body>Are you sure you want to download?</Modal.Body>
           <Modal.Footer>
-            <Button variant="secondary" onClick={this.closeDownloadModal}>
+            <Button variant="secondary" onClick={this.closeImageDownloadModal}>
               Cancel
             </Button>
-            <Button variant="primary" onClick={this.closeDownloadModal}>
+            <Button variant="primary" onClick={this.closeImageDownloadModal}>
               Download
             </Button>
           </Modal.Footer>
