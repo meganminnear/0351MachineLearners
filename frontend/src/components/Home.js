@@ -86,14 +86,6 @@ class Home extends React.Component {
     this.refs.mainTextArea.value = "";
   }
 
-  downloadImageFile = () => {
-    const e = document.createElement("a");
-    e.href = {exampleImage};
-    document.body.appendChild(e);
-    e.click();
-    document.body.removeChild(e);
-  }
-
   render() {
     return (
       <div className="main-page">
