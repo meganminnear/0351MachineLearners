@@ -23,15 +23,20 @@ class Home extends React.Component {
     super(props);
 
     this.state = {
-      showDownloadModal : false,
-      showShareModal: false,
-      diagramData: null
+      showCSVDownloadModal : false,
+      show2DImageDownloadModal : false,
+      show3DImageDownloadModal : false,
+      showShareModal : false,
     };
 
     this.textUpdate = this.textUpdate.bind(this);
     this.clearText = this.clearText.bind(this);
-    this.openDownloadModal = this.openDownloadModal.bind(this);
-    this.closeDownloadModal = this.closeDownloadModal.bind(this);
+    this.open2DImageDownloadModal = this.open2DImageDownloadModal.bind(this);
+    this.close2DImageDownloadModal = this.close2DImageDownloadModal.bind(this);
+    this.open3DImageDownloadModal = this.open3DImageDownloadModal.bind(this);
+    this.close3DImageDownloadModal = this.close3DImageDownloadModal.bind(this);
+    this.openCSVDownloadModal = this.openCSVDownloadModal.bind(this);
+    this.closeCSVDownloadModal = this.closeCSVDownloadModal.bind(this);
     this.openShareModal = this.openShareModal.bind(this);
     this.closeShareModal = this.closeShareModal.bind(this);
     this.getImage = this.getImage.bind(this);
@@ -46,7 +51,6 @@ class Home extends React.Component {
       this.refs.abstractImage.src = abstractImage;
     }.bind(this), 1000);
   }
-
   getImage() {
     return this.state.diagramImage;
   }
@@ -55,15 +59,39 @@ class Home extends React.Component {
     this.state.diagramImage = <VictoryLine />;
   }
 
-  openDownloadModal() {
+  open2DImageDownloadModal() {
     this.setState({
-      showDownloadModal : true
+      show2DImageDownloadModal : true
     });
   }
 
-  closeDownloadModal() {
+  close2DImageDownloadModal() {
     this.setState({
-      showDownloadModal : false
+      show2DImageDownloadModal : false
+    });
+  }
+
+  open3DImageDownloadModal() {
+    this.setState({
+      show3DImageDownloadModal : true
+    });
+  }
+
+  close3DImageDownloadModal() {
+    this.setState({
+      show3DImageDownloadModal : false
+    });
+  }
+
+  openCSVDownloadModal() {
+    this.setState({
+      showCSVDownloadModal : true
+    });
+  }
+
+  closeCSVDownloadModal() {
+    this.setState({
+      showCSVDownloadModal : false
     });
   }
 
@@ -102,50 +130,73 @@ class Home extends React.Component {
                 <p id="subtitle">when you enter your writing, it gets analyzed by our algorithm in order to draw an image!</p>
               </div>
               <div className="col-6 px-3">
-                <Tabs defaultActiveKey="linear" id="figure-tabs">
+                <Tabs defaultActiveKey="linear" id="figure-tabs" transition={false}>
                   <Tab eventKey="linear" title="linear">
                     <VictoryLine data={this.state.diagramData}/>
                   </Tab>
                   <Tab eventKey="abstract" title="abstract">
                     <Image width="100%" src={emptyImage} ref="abstractImage" />
+                    {/*3D buttons and modal*/}
+                    <Button className="mx-2" id="green" variant="primary" onClick={this.openCSVDownloadModal}>download CSV</Button>
+                    <Button className="mx-2" id="pink" variant="primary" onClick={this.openShareModal}>share!</Button>
+                    <Button className="mx-2" id="green" variant="primary" onClick={this.open3DImageDownloadModal}>download image</Button>
+                    <Modal show={this.state.show3DImageDownloadModal} onHide={this.close3DImageDownloadModal}>
+                      <Modal.Header closeButton>
+                        <Modal.Title>Download Image?</Modal.Title>
+                      </Modal.Header>
+                      <Modal.Body>Are you sure you want to download the image?</Modal.Body>
+                      <Modal.Footer>
+                        <Button variant="secondary" onClick={this.close3DImageDownloadModal}>
+                          Cancel
+                        </Button>
+                        <a href={abstractImage} download="Sentiment-3D.png">
+                          <Button variant="primary" onClick={this.close3DImageDownloadModal}>
+                            Download
+                          </Button>
+                        </a>
+                      </Modal.Footer>
+                    </Modal>
                   </Tab>
                 </Tabs>
-                <Button className="mx-2" id="green" variant="primary" onClick={this.openDownloadModal}>download CSV</Button>
-                <Button className="mx-2" id="pink" variant="primary" onClick={this.openShareModal}>share!</Button>
-                <Button className="mx-2" id="green" variant="primary" onClick={this.openDownloadModal}>download image</Button>
+
               </div>
             </div>
           </div>
         </div>
 
-        <Modal show={this.state.showDownloadModal} onHide={this.closeDownloadModal}>
+        {/* Download Modal to download a CSV file */}
+        <Modal show={this.state.showCSVDownloadModal} onHide={this.closeCSVDownloadModal}>
           <Modal.Header closeButton>
-            <Modal.Title>Download?</Modal.Title>
+            <Modal.Title>Download CSV?</Modal.Title>
           </Modal.Header>
-          <Modal.Body>Are you sure you want to download?</Modal.Body>
+          <Modal.Body>Are you sure you want to download the CSV?</Modal.Body>
           <Modal.Footer>
-            <Button variant="secondary" onClick={this.closeDownloadModal}>
+            <Button variant="secondary" onClick={this.closeCSVDownloadModal}>
               Cancel
             </Button>
-            <Button variant="primary" onClick={this.closeDownloadModal}>
-              Download
-            </Button>
+            <Button variant="primary" onClick={this.downloadImageFile}>
+                Download
+              </Button>
           </Modal.Footer>
         </Modal>
-        <Modal show={this.state.showDownloadModal} onHide={this.closeDownloadModal}>
+
+        {/* Download Modal to download a 2D image
+        <Modal show={this.state.showImageDownloadModal} onHide={this.closeImageDownloadModal}>
           <Modal.Header closeButton>
-            <Modal.Title>Download?</Modal.Title>
+            <Modal.Title>Download Image?</Modal.Title>
           </Modal.Header>
-          <Modal.Body>Are you sure you want to download?</Modal.Body>
+          <Modal.Body>Are you sure you want to download the image?</Modal.Body>
           <Modal.Footer>
-            <Button variant="secondary" onClick={this.closeDownloadModal}>
+            <Button variant="secondary" onClick={this.closeImageDownloadModal}>
               Cancel
             </Button>
-            <Button variant="primary" onClick={this.closeDownloadModal}>
-              Download
-            </Button>
+            <a href={exampleImage} download="Sentiment-2D.png">
+              <Button variant="primary" onClick={this.closeImageDownloadModal}>
+                Download
+              </Button>
+            </a>
           </Modal.Footer>
-        </Modal>
+        </Modal>*/}
 
         <Modal show={this.state.showShareModal} centered dialogClassName="share-modal" onHide={this.closeShareModal}>
           <Modal.Header closeButton className="no-border"/>
