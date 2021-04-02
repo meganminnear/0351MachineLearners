@@ -16,6 +16,7 @@ import Tab from 'react-bootstrap/Tab';
 import Image from 'react-bootstrap/Image';
 import Modal from 'react-bootstrap/Modal';
 import { BrowserRouter as Link } from "react-router-dom";
+import { VictoryLine } from "victory";
 
 class Home extends React.Component {
   constructor(props) {
@@ -23,7 +24,8 @@ class Home extends React.Component {
 
     this.state = {
       showDownloadModal : false,
-      showShareModal: false
+      showShareModal: false,
+      diagramData: null
     };
 
     this.textUpdate = this.textUpdate.bind(this);
@@ -32,13 +34,25 @@ class Home extends React.Component {
     this.closeDownloadModal = this.closeDownloadModal.bind(this);
     this.openShareModal = this.openShareModal.bind(this);
     this.closeShareModal = this.closeShareModal.bind(this);
+    this.getImage = this.getImage.bind(this);
   }
 
   textUpdate() {
     setTimeout(function() {
-      this.refs.diagramImage.src = exampleImage;
+      //this.refs.diagramImage.src = <VictoryLine />;
+      //this.generateImage();
+      this.setState({diagramData: [{x: 1, y: Math.floor(Math.random() * 10)}, {x: 2, y: Math.floor(Math.random() * 10)}, {x: 3, y: Math.floor(Math.random() * 10)}]});
+      console.log(this.state.diagramData)
       this.refs.abstractImage.src = abstractImage;
     }.bind(this), 1000);
+  }
+
+  getImage() {
+    return this.state.diagramImage;
+  }
+
+  generateImage() {
+    this.state.diagramImage = <VictoryLine />;
   }
 
   openDownloadModal() {
@@ -90,7 +104,7 @@ class Home extends React.Component {
               <div className="col-6 px-3">
                 <Tabs defaultActiveKey="linear" id="figure-tabs">
                   <Tab eventKey="linear" title="linear">
-                    <Image width="100%" src={emptyImage} ref="diagramImage" />
+                    <VictoryLine data={this.state.diagramData}/>
                   </Tab>
                   <Tab eventKey="abstract" title="abstract">
                     <Image width="100%" src={emptyImage} ref="abstractImage" />
@@ -144,17 +158,17 @@ class Home extends React.Component {
               <div className='row justify-content-center'>
                 <div className="col text-center">
                   <a href="https://www.facebook.com/" target="_blank">
-                    <Image width="60%" src={facebookLogo} ref="diagramImage" />
+                    <Image width="60%" src={facebookLogo} />
                   </a>
                 </div>
                 <div className="col text-center">
                   <a href="https://www.instagram.com/" target="_blank">
-                    <Image width="60%" src={instagramLogo} ref="diagramImage" />
+                    <Image width="60%" src={instagramLogo} />
                   </a>
                 </div>
                 <div className="col text-center">
                   <a href="https://www.twitter.com/" target="_blank">
-                    <Image width="60%" src={twitterLogo} ref="diagramImage" />
+                    <Image width="60%" src={twitterLogo} />
                   </a>
                 </div>
               </div>
