@@ -16,7 +16,7 @@ import Tab from 'react-bootstrap/Tab';
 import Image from 'react-bootstrap/Image';
 import Modal from 'react-bootstrap/Modal';
 import { BrowserRouter as Link } from "react-router-dom";
-import { VictoryLine } from "victory";
+import { VictoryChart, VictoryTheme, VictoryLine } from "victory";
 
 class Home extends React.Component {
   constructor(props) {
@@ -52,12 +52,10 @@ class Home extends React.Component {
     }.bind(this), 1000);
   }
   getImage() {
-    return this.state.diagramImage;
+    //return this.state.diagramImage;
   }
 
-  generateImage() {
-    this.state.diagramImage = <VictoryLine />;
-  }
+
 
   open2DImageDownloadModal() {
     this.setState({
@@ -108,7 +106,7 @@ class Home extends React.Component {
   }
 
   clearText() {
-    this.refs.diagramImage.src = emptyImage;
+    this.setState({diagramData: []});
     this.refs.abstractImage.src = emptyImage;
     this.refs.mainTextArea.value = "";
   }
@@ -132,7 +130,28 @@ class Home extends React.Component {
               <div className="col-6 px-3">
                 <Tabs defaultActiveKey="linear" id="figure-tabs" transition={false}>
                   <Tab eventKey="linear" title="linear">
-                    <VictoryLine data={this.state.diagramData}/>
+                    <VictoryChart theme={VictoryTheme.material}>
+                      <VictoryLine data={this.state.diagramData}/>
+                    </VictoryChart>
+                    <Button className="mx-2" id="green" variant="primary" onClick={this.openCSVDownloadModal}>download CSV</Button>
+                    <Button className="mx-2" id="pink" variant="primary" onClick={this.openShareModal}>share!</Button>
+                    <Button className="mx-2" id="green" variant="primary" onClick={this.open3DImageDownloadModal}>download image</Button>
+                    <Modal show={this.state.show3DImageDownloadModal} onHide={this.close3DImageDownloadModal}>
+                      <Modal.Header closeButton>
+                        <Modal.Title>Download Image?</Modal.Title>
+                      </Modal.Header>
+                      <Modal.Body>Are you sure you want to download the image?</Modal.Body>
+                      <Modal.Footer>
+                        <Button variant="secondary" onClick={this.close3DImageDownloadModal}>
+                          Cancel
+                        </Button>
+                        <a href={abstractImage} download="Sentiment-3D.png">
+                          <Button variant="primary" onClick={this.close3DImageDownloadModal}>
+                            Download
+                          </Button>
+                        </a>
+                      </Modal.Footer>
+                    </Modal>
                   </Tab>
                   <Tab eventKey="abstract" title="abstract">
                     <Image width="100%" src={emptyImage} ref="abstractImage" />
