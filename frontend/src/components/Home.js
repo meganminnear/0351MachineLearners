@@ -133,9 +133,31 @@ class Home extends React.Component {
                 <Tabs defaultActiveKey="linear" id="figure-tabs" transition={false}>
                   <Tab eventKey="linear" title="linear">
                     <VictoryLine data={this.state.diagramData}/>
+                    {/*2D buttons and modal*/}
+                    <Button className="mx-2" id="green" variant="primary" onClick={this.openCSVDownloadModal}>download CSV</Button>
+                    <Button className="mx-2" id="pink" variant="primary" onClick={this.openShareModal}>share!</Button>
+                    <Button className="mx-2" id="green" variant="primary" onClick={this.open2DImageDownloadModal}>download image</Button>
+                    <Modal show={this.state.show2DImageDownloadModal} onHide={this.close2DImageDownloadModal}>
+                      <Modal.Header closeButton>
+                        <Modal.Title>Download Image?</Modal.Title>
+                      </Modal.Header>
+                      <Modal.Body>Are you sure you want to download the image?</Modal.Body>
+                      <Modal.Footer>
+                        <Button variant="secondary" onClick={this.close2DImageDownloadModal}>
+                          Cancel
+                        </Button>
+                        <a href={exampleImage} download="Sentiment-2D.png">
+                          <Button variant="primary" onClick={this.close2DImageDownloadModal}>
+                            Download
+                          </Button>
+                        </a>
+                      </Modal.Footer>
+                    </Modal>
                   </Tab>
                   <Tab eventKey="abstract" title="abstract">
-                    <Image width="100%" src={emptyImage} ref="abstractImage" />
+                    <div className="col-40">
+                      <Image width="100%" src={emptyImage} ref="abstractImage" />
+                    </div>
                     {/*3D buttons and modal*/}
                     <Button className="mx-2" id="green" variant="primary" onClick={this.openCSVDownloadModal}>download CSV</Button>
                     <Button className="mx-2" id="pink" variant="primary" onClick={this.openShareModal}>share!</Button>
