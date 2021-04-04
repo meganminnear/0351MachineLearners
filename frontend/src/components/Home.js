@@ -156,8 +156,7 @@ class Home extends React.Component {
                     </Modal>
                   </Tab>
                   <Tab eventKey="abstract" title="abstract">
-                    <div className="col-40">
-                      
+                    <div id="ThreeDContainer">
                       <Rendering />
                     </div>
                     {/*3D buttons and modal*/}
