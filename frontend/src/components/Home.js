@@ -17,6 +17,7 @@ import Image from 'react-bootstrap/Image';
 import Modal from 'react-bootstrap/Modal';
 import { BrowserRouter as Link } from "react-router-dom";
 import { VictoryChart, VictoryTheme, VictoryLine } from "victory";
+import Rendering from './Rendering';
 
 class Home extends React.Component {
   constructor(props) {
@@ -133,20 +134,21 @@ class Home extends React.Component {
                     <VictoryChart theme={VictoryTheme.material}>
                       <VictoryLine data={this.state.diagramData}/>
                     </VictoryChart>
+                    {/*2D buttons and modal*/}
                     <Button className="mx-2" id="green" variant="primary" onClick={this.openCSVDownloadModal}>download CSV</Button>
                     <Button className="mx-2" id="pink" variant="primary" onClick={this.openShareModal}>share!</Button>
-                    <Button className="mx-2" id="green" variant="primary" onClick={this.open3DImageDownloadModal}>download image</Button>
-                    <Modal show={this.state.show3DImageDownloadModal} onHide={this.close3DImageDownloadModal}>
+                    <Button className="mx-2" id="green" variant="primary" onClick={this.open2DImageDownloadModal}>download image</Button>
+                    <Modal show={this.state.show2DImageDownloadModal} onHide={this.close2DImageDownloadModal}>
                       <Modal.Header closeButton>
                         <Modal.Title>Download Image?</Modal.Title>
                       </Modal.Header>
                       <Modal.Body>Are you sure you want to download the image?</Modal.Body>
                       <Modal.Footer>
-                        <Button variant="secondary" onClick={this.close3DImageDownloadModal}>
+                        <Button variant="secondary" onClick={this.close2DImageDownloadModal}>
                           Cancel
                         </Button>
-                        <a href={abstractImage} download="Sentiment-3D.png">
-                          <Button variant="primary" onClick={this.close3DImageDownloadModal}>
+                        <a href={exampleImage} download="Sentiment-2D.png">
+                          <Button variant="primary" onClick={this.close2DImageDownloadModal}>
                             Download
                           </Button>
                         </a>
@@ -154,7 +156,10 @@ class Home extends React.Component {
                     </Modal>
                   </Tab>
                   <Tab eventKey="abstract" title="abstract">
-                    <Image width="100%" src={emptyImage} ref="abstractImage" />
+                    <div className="col-40">
+                      
+                      <Rendering />
+                    </div>
                     {/*3D buttons and modal*/}
                     <Button className="mx-2" id="green" variant="primary" onClick={this.openCSVDownloadModal}>download CSV</Button>
                     <Button className="mx-2" id="pink" variant="primary" onClick={this.openShareModal}>share!</Button>
