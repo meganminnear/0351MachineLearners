@@ -16,7 +16,7 @@ import Tab from 'react-bootstrap/Tab';
 import Image from 'react-bootstrap/Image';
 import Modal from 'react-bootstrap/Modal';
 import { BrowserRouter as Link } from "react-router-dom";
-import { VictoryLine } from "victory";
+import { VictoryChart, VictoryTheme, VictoryLine } from "victory";
 import Rendering from './Rendering';
 
 class Home extends React.Component {
@@ -53,12 +53,10 @@ class Home extends React.Component {
     }.bind(this), 1000);
   }
   getImage() {
-    return this.state.diagramImage;
+    //return this.state.diagramImage;
   }
 
-  generateImage() {
-    this.state.diagramImage = <VictoryLine />;
-  }
+
 
   open2DImageDownloadModal() {
     this.setState({
@@ -109,7 +107,7 @@ class Home extends React.Component {
   }
 
   clearText() {
-    this.refs.diagramImage.src = emptyImage;
+    this.setState({diagramData: []});
     this.refs.abstractImage.src = emptyImage;
     this.refs.mainTextArea.value = "";
   }
@@ -133,7 +131,9 @@ class Home extends React.Component {
               <div className="col-6 px-3">
                 <Tabs defaultActiveKey="linear" id="figure-tabs" transition={false}>
                   <Tab eventKey="linear" title="linear">
-                    <VictoryLine data={this.state.diagramData}/>
+                    <VictoryChart theme={VictoryTheme.material}>
+                      <VictoryLine data={this.state.diagramData}/>
+                    </VictoryChart>
                     {/*2D buttons and modal*/}
                     <Button className="mx-2" id="green" variant="primary" onClick={this.openCSVDownloadModal}>download CSV</Button>
                     <Button className="mx-2" id="pink" variant="primary" onClick={this.openShareModal}>share!</Button>
