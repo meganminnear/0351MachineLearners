@@ -1,3 +1,4 @@
+import json
 from flask import Flask, request, Response
 from emotion_analysis import analyze_text
 app = Flask(__name__)
@@ -15,7 +16,7 @@ def get_emotions():
             status=400)
     text = data["text"]
     try:
-        return analyze_text(text)
+        return json.dumps(analyze_text(text))
     except Exception as e:
         return Response(
             "Server error: " + str(e),

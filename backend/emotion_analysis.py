@@ -1,5 +1,6 @@
 import json
 import numpy as np
+import nltk
 from deepmoji.sentence_tokenizer import SentenceTokenizer
 from deepmoji.model_def import deepmoji_emojis
 from deepmoji.global_variables import PRETRAINED_PATH, VOCAB_PATH
@@ -12,6 +13,9 @@ def top_elements(array, k):
 
 maxlen = 30
 batch_size = 32
+
+print("Running NLTK download 'punkt'")
+nltk.download('punkt')
 
 print("Tokenizing using dictionary from {}".format(VOCAB_PATH))
 with open(VOCAB_PATH, 'r') as f:
@@ -30,10 +34,18 @@ emotions = {v for _, v in emoji_mapping.items()}
 # TODO: split text into tokens or something
 def analyze_text(text):
     print("Analyzing text: '{}'".format(text))
-    tokenized, _, _ = st.tokenize_sentences([text])
+    sentences = nltk.sent_tokenize(text)
+    print("Tokenized into {} sentences".format(len(sentences)))
+    tokenized, _, _ = st.tokenize_sentences(sentences)
     pred = model.predict(tokenized)
-    ind_top = top_elements(pred[0], 5)
-    output_emotions = {emotion : 0.0 for emotion in emotions}
-    for idx in ind_top:
-        output_emotions[emoji_mapping[idx]] += pred[0][idx]
-    return output_emotions
+    results = []
+    for i, sentence in enumerate(sentences):
+        ind_top = top_elements(pred[i], 5)
+        output_emotions = {emotion : 0.0 for emotion in emotions}
+        for idx in ind_top:
+            output_emotions[emoji_mapping[idx]] += pred[i][idx]
+        results.append({
+            "text": sentence,
+            "emotions": output_emotions
+            })
+    return {"tokens": results}
