@@ -675,7 +675,9 @@ export default function Rendering() {
     let positiveYSphere = 2;
     let negativeYSphere = -3;
     for (let i = 0; i < array.length; i++) {
-        if (array[i][0] == "Mirth") {
+        if (array[i].length == 0) { //if there is no info in the inner array, skip
+            continue;
+        } else if(array[i][0] == "Mirth") {
             renderedObjects.push( <MirthSphere position={[Math.random() * 10 - 5, positiveYSphere, 0]} />);
             spherePositiveIndex++;
             if (spherePositiveIndex == 5) {
