@@ -31,8 +31,8 @@ with open(EMOJI_MAPPING_PATH, "r") as f:
 emoji_mapping = {int(k) : v for k, v in emoji_mapping.items()}
 emotions = {v for _, v in emoji_mapping.items()}
 
-# TODO: split text into tokens or something
-def analyze_text(text):
+
+def analyze_emotion(text):
     print("Analyzing text: '{}'".format(text))
     sentences = nltk.sent_tokenize(text)
     print("Tokenized into {} sentences".format(len(sentences)))
@@ -48,4 +48,4 @@ def analyze_text(text):
             "text": sentence,
             "emotions": output_emotions
             })
-    return {"tokens": results}
+    return results

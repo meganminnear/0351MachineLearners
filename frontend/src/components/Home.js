@@ -16,7 +16,7 @@ import Tab from 'react-bootstrap/Tab';
 import Image from 'react-bootstrap/Image';
 import Modal from 'react-bootstrap/Modal';
 import { BrowserRouter as Link } from "react-router-dom";
-import { VictoryChart, VictoryTheme, VictoryLine } from "victory";
+import { VictoryChart, VictoryTheme, VictoryLine, VictoryLegend } from "victory";
 import Rendering from './Rendering';
 
 class Home extends React.Component {
@@ -28,6 +28,9 @@ class Home extends React.Component {
       show2DImageDownloadModal : false,
       show3DImageDownloadModal : false,
       showShareModal : false,
+      typingTimer : null,
+      input_string : "",
+      diagramData : {sentiments: [], movingAverage: []}
     };
 
     this.textUpdate = this.textUpdate.bind(this);
@@ -41,17 +44,39 @@ class Home extends React.Component {
     this.openShareModal = this.openShareModal.bind(this);
     this.closeShareModal = this.closeShareModal.bind(this);
     this.getImage = this.getImage.bind(this);
+    this.callServer = this.callServer.bind(this);
   }
 
-  textUpdate() {
-    setTimeout(function() {
-      //this.refs.diagramImage.src = <VictoryLine />;
-      //this.generateImage();
-      this.setState({diagramData: [{x: 1, y: Math.floor(Math.random() * 10)}, {x: 2, y: Math.floor(Math.random() * 10)}, {x: 3, y: Math.floor(Math.random() * 10)}]});
-      console.log(this.state.diagramData)
-      this.refs.abstractImage.src = abstractImage;
-    }.bind(this), 1000);
+  textUpdate(event) {
+    clearTimeout(this.state.typingTimer);
+    if (event.target.value) {
+      this.setState({input_string: event.target.value, typingTimer: setTimeout(this.callServer, 1000)});
+    }
   }
+
+  callServer() {
+    //this.setState({diagramData: [{x: 1, y: Math.floor(Math.random() * 10)}, {x: 2, y: Math.floor(Math.random() * 10)}, {x: 3, y: Math.floor(Math.random() * 10)}]});
+    console.log("Sent to server: " + this.state.input_string);
+    fetch("http://localhost:5000/api/emotions", {
+      method: "POST",
+      credentials: 'same-origin',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json'
+      },
+      body: JSON.stringify({"text": this.state.input_string})})
+    .then(response => {
+      response.json().then(res => {
+        console.log(res);
+        console.log(res.x_values);
+        this.setState({diagramData: {sentiments: res.x_values.sentiments, movingAverage: res.x_values.movingAverage}})
+      })
+    })
+    .catch(error => console.log("error: " + error));
+    //this.refs.abstractImage.src = abstractImage;
+
+  }
+
   getImage() {
     //return this.state.diagramImage;
   }
@@ -107,8 +132,8 @@ class Home extends React.Component {
   }
 
   clearText() {
-    this.setState({diagramData: []});
-    this.refs.abstractImage.src = emptyImage;
+    this.setState({diagramData: {sentiments: [], movingAverage: []}, input_string: ""});
+    //this.refs.abstractImage.src = emptyImage;
     this.refs.mainTextArea.value = "";
   }
 
@@ -121,7 +146,7 @@ class Home extends React.Component {
               <div className="col-6 px-1 py-5">
                 <Form>
                   <Form.Group controlId="exampleForm.ControlTextarea1">
-                    <Form.Control as="textarea" rows={10} onChange={this.textUpdate} placeholder="enter text here" ref="mainTextArea" />
+                    <Form.Control as="textarea" rows={10} onChange={event => this.textUpdate(event)} placeholder="enter text here" ref="mainTextArea" />
                   </Form.Group>
                 </Form>
                 <Button className="mx-2" id="green" variant="primary" onClick={this.clearText}>clear</Button>
@@ -132,7 +157,11 @@ class Home extends React.Component {
                 <Tabs defaultActiveKey="linear" id="figure-tabs" transition={false}>
                   <Tab eventKey="linear" title="linear">
                     <VictoryChart theme={VictoryTheme.material}>
-                      <VictoryLine data={this.state.diagramData}/>
+                      <VictoryLegend orientation = {"horizontal"} x={100} y={20} data = {[
+                        {name: "Sentiment", symbol: {fill:"black"}},
+                        {name: "Running Average", symbol: {fill:"red"}}]}/>
+                      <VictoryLine data={this.state.diagramData.sentiments}/>
+                      <VictoryLine style={{ data: { stroke: "red" } }} data={this.state.diagramData.movingAverage}/>
                     </VictoryChart>
                     {/*2D buttons and modal*/}
                     <Button className="mx-2" id="green" variant="primary" onClick={this.openCSVDownloadModal}>download CSV</Button>
@@ -157,7 +186,7 @@ class Home extends React.Component {
                   </Tab>
                   <Tab eventKey="abstract" title="abstract">
                     <div className="col-40">
-                      
+
                       <Rendering />
                     </div>
                     {/*3D buttons and modal*/}

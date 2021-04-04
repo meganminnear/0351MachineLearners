@@ -1,9 +1,14 @@
 import json
 from flask import Flask, request, Response
-from emotion_analysis import analyze_text
+from emotion_analysis import analyze_emotion
+from polarity_analysis import analyze_polarity
+from flask_cors import CORS, cross_origin
 app = Flask(__name__)
+cors = CORS(app)
+app.config["CORS_HEADERS"] = "Content-Type"
 
 @app.route("/api/emotions", methods=["POST"])
+@cross_origin()
 def get_emotions():
     data = request.json
     if data is None:
@@ -16,8 +21,12 @@ def get_emotions():
             status=400)
     text = data["text"]
     try:
-        return json.dumps(analyze_text(text))
+        return_object = {}
+        return_object["tokens"] = analyze_emotion(text)
+        return_object["x_values"] = analyze_polarity(text)
+        return json.dumps(return_object)
     except Exception as e:
+        print(e)
         return Response(
             "Server error: " + str(e),
             status=500)
