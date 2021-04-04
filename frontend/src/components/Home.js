@@ -17,6 +17,7 @@ import Image from 'react-bootstrap/Image';
 import Modal from 'react-bootstrap/Modal';
 import { BrowserRouter as Link } from "react-router-dom";
 import { VictoryLine } from "victory";
+import Rendering from './Rendering';
 
 class Home extends React.Component {
   constructor(props) {
@@ -156,7 +157,8 @@ class Home extends React.Component {
                   </Tab>
                   <Tab eventKey="abstract" title="abstract">
                     <div className="col-40">
-                      <Image width="100%" src={emptyImage} ref="abstractImage" />
+                      
+                      <Rendering />
                     </div>
                     {/*3D buttons and modal*/}
                     <Button className="mx-2" id="green" variant="primary" onClick={this.openCSVDownloadModal}>download CSV</Button>
