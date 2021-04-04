@@ -54,3 +54,11 @@ textarea {
   background-color: rgb(175, 143, 149);
   color: white;
 }
+
+#ThreeDContainer {
+  display: table;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
