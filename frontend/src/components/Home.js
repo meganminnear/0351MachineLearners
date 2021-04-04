@@ -30,7 +30,8 @@ class Home extends React.Component {
       showShareModal : false,
       typingTimer : null,
       input_string : "",
-      diagramData : {sentiments: [], movingAverage: []}
+      diagramData : {sentiments: [], movingAverage: []},
+      tokens : []
     };
 
     this.textUpdate = this.textUpdate.bind(this);
@@ -70,7 +71,8 @@ class Home extends React.Component {
         console.log(res);
         console.log(res.x_values);
         this.setState({diagramData: {sentiments: res.x_values.sentiments, movingAverage: res.x_values.movingAverage}})
-        res.tokens;
+        this.setState({tokens: res.tokens})
+        //console.log(this.state.tokens)
       })
     })
     .catch(error => console.log("error: " + error));
@@ -187,7 +189,7 @@ class Home extends React.Component {
                   </Tab>
                   <Tab eventKey="abstract" title="abstract">
                     <div className = "col-60" id="ThreeDContainer">
-                      <Rendering />
+                      <Rendering array={this.state.tokens}/>
                     </div>
                     {/*3D buttons and modal*/}
                     <Button className="mx-2" id="green" variant="primary" onClick={this.openCSVDownloadModal}>download CSV</Button>
