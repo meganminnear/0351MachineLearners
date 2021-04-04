@@ -70,6 +70,7 @@ class Home extends React.Component {
         console.log(res);
         console.log(res.x_values);
         this.setState({diagramData: {sentiments: res.x_values.sentiments, movingAverage: res.x_values.movingAverage}})
+        res.tokens;
       })
     })
     .catch(error => console.log("error: " + error));
@@ -185,7 +186,7 @@ class Home extends React.Component {
                     </Modal>
                   </Tab>
                   <Tab eventKey="abstract" title="abstract">
-                    <div id="ThreeDContainer">
+                    <div className = "col-60" id="ThreeDContainer">
                       <Rendering />
                     </div>
                     {/*3D buttons and modal*/}

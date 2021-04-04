@@ -1,8 +1,7 @@
 import React, { useRef, useState } from 'react'
-import { Canvas, useFrame } from '@react-three/fiber'
-import * as THREE from 'three'
+import { Canvas, useFrame } from 'react-three-fiber';
 
-let array = [
+{/*let array = [
     ["Mirth", "Discontentment", "Pleasure", "Sadness", "Love"],
     ["Approval", "Happiness", "Confidence", "Giddy", "Joy"],
     ["Embarressed", "Bored", "Content", "Celebration", "Hopeless"],
@@ -14,8 +13,33 @@ let array = [
     ["Confidence"],
     ["Giddy"],
     ["Joy"],
-    ["Embarrassed"]
-    ];
+    ["Embarrassed"],
+    ["Bored"],
+    ["Content"],
+    ["Celebration"],
+    ["Hopeless"],
+    ["Nervous"],
+    ["Hope"],
+    ["Confused"],
+    ["Affectionate"],
+    ["Disappointed"],
+    ["Shy"],
+    ["Frustrated"],
+    ["Anger"],
+    ["Playful"],
+    ["Irritated"],
+    ["Sick"],
+    ["Curiosity"],
+    ["Violent"],
+    ["Evil"],
+    ["Stressed"],
+    ["Heartbroken"],
+    ["Surprised"],
+    ["Guarded"],
+    ["Strong"],
+    ["Scared"],
+    ["Excited"]
+    ]; */}
 
 function MirthSphere(props) {
     const mesh = useRef()
@@ -243,7 +267,7 @@ function ContentCube(props) {
         <mesh
             {...props}
             ref={mesh}>
-            <sphereBufferGeometry args={[1, 32, 32]} />
+            <boxBufferGeometry args={[1, 1, 1]} />
             <meshStandardMaterial color="#fffc96" />
         </mesh>
     )
@@ -261,7 +285,7 @@ function CelebrationCube(props) {
         <mesh
             {...props}
             ref={mesh}>
-            <cubeBufferGeometry args={[1, 1, 1]} />
+            <boxBufferGeometry args={[1, 1, 1]} />
             <meshStandardMaterial color="#ffd700" />
         </mesh>
     )
@@ -333,7 +357,7 @@ function ConfusedCube(props) {
         <mesh
             {...props}
             ref={mesh}>
-            <cubeBufferGeometry args={[1, 1, 1]} />
+            <boxBufferGeometry args={[1, 1, 1]} />
             <meshStandardMaterial color="#f7ae48" />
         </mesh>
     )
@@ -687,6 +711,7 @@ export default function Rendering() {
             negativeIndex++;
             if (negativeIndex == 10) {
                 negativeY -= 2;
+                negativeYSphere -=2;
             }
         } else if (array[i][0] == "Pleasure") {
             renderedObjects.push( <PleasureSphere position={[Math.random() * 10 - 5, positiveYSphere, 0]} />);
@@ -705,6 +730,7 @@ export default function Rendering() {
             positiveIndex++;
             if (positiveIndex == 10) {
                 positiveY += 2;
+                positiveYSphere -=2;
             }
         } else if (array[i][0] == "Happiness") {
             renderedObjects.push( <HappinessSphere position={[Math.random() * 10 - 5, positiveYSphere, 0]} />);
@@ -715,6 +741,7 @@ export default function Rendering() {
             positiveIndex++;
             if (positiveIndex == 10) {
                 positiveY += 2;
+                positiveYSphere -=2;
             }
         } else if (array[i][0] == "Giddy") {
             renderedObjects.push( <GiddySphere position={[Math.random() * 10 - 5, positiveYSphere, 0]} />);
@@ -733,18 +760,21 @@ export default function Rendering() {
             negativeIndex++;
             if (negativeIndex == 10) {
                 negativeY -= 2;
+                negativeYSphere -=2;
             }
         } else if (array[i][0] == "Content") {
             renderedObjects.push( <ContentCube position={[Math.random() * 10 - 5, positiveY, 0]} />);
             positiveIndex++;
             if (positiveIndex == 10) {
                 positiveY += 2;
+                positiveYSphere -=2;
             }
         } else if (array[i][0] == "Celebration") {
             renderedObjects.push( <CelebrationCube position={[Math.random() * 10 - 5, positiveY, 0]} />);
             positiveIndex++;
             if (positiveIndex == 10) {
                 positiveY += 2;
+                positiveYSphere -=2;
             }
         } else if (array[i][0] == "Hopeless") {
             renderedObjects.push( <HopelessSphere position={[Math.random() * 10 - 5, negativeYSphere, 0]} />);
@@ -755,6 +785,7 @@ export default function Rendering() {
             negativeIndex++;
             if (negativeIndex == 10) {
                 negativeY -= 2;
+                negativeYSphere -=2;
             }
         } else if (array[i][0] == "Hope") {
             renderedObjects.push( <HopeSphere position={[Math.random() * 10 - 5, positiveYSphere, 0]} />);
@@ -765,6 +796,7 @@ export default function Rendering() {
             negativeIndex++;
             if (negativeIndex == 10) {
                 negativeY -= 2;
+                negativeYSphere -=2;
             }
         } else if (array[i][0] == "Affectionate") {
             renderedObjects.push( <AffectionateSphere position={[Math.random() * 10 - 5, positiveYSphere, 0]} />);
@@ -775,6 +807,7 @@ export default function Rendering() {
             negativeIndex++;
             if (negativeIndex == 10) {
                 negativeY -= 2;
+                negativeYSphere -=2;
             }
         } else if (array[i][0] == "Shy") {
             renderedObjects.push( <ShySphere position={[Math.random() * 10 - 5, negativeYSphere, 0]} />);
@@ -785,12 +818,14 @@ export default function Rendering() {
             negativeIndex++;
             if (negativeIndex == 10) {
                 negativeY -= 2;
+                negativeYSphere -=2;
             }
         } else if (array[i][0] == "Anger") {
             renderedObjects.push( <AngerTriangle position={[Math.random() * 10 - 5, negativeY, 0]} />);
             negativeIndex++;
             if (negativeIndex == 10) {
                 negativeY -= 2;
+                negativeYSphere -=2;
             }
         } else if (array[i][0] == "Playful") {
             renderedObjects.push( <PlayfulSphere position={[Math.random() * 10 - 5, positiveYSphere, 0]} />);
@@ -801,36 +836,42 @@ export default function Rendering() {
             negativeIndex++;
             if (negativeIndex == 10) {
                 negativeY -= 2;
+                negativeYSphere -=2;
             }
         } else if (array[i][0] == "Sick") {
             renderedObjects.push( <SickCone position={[Math.random() * 10 - 5, negativeY, 0]} />);
             negativeIndex++;
             if (negativeIndex == 10) {
                 negativeY -= 2;
+                negativeYSphere -=2;
             }
         } else if (array[i][0] == "Curiosity") {
             renderedObjects.push( <CuriosityCylinder position={[Math.random() * 10 - 5, positiveY, 0]} />);
             positiveIndex++;
             if (positiveIndex == 10) {
                 positiveY += 2;
+                positiveYSphere -=2;
             }
         } else if (array[i][0] == "Violent") {
             renderedObjects.push( <ViolentCone position={[Math.random() * 10 - 5, negativeY, 0]} />);
             negativeIndex++;
             if (negativeIndex == 10) {
                 negativeY -= 2;
+                negativeYSphere -=2;
             }
         } else if (array[i][0] == "Evil") {
             renderedObjects.push( <EvilTriangle position={[Math.random() * 10 - 5, negativeY, 0]} />);
             negativeIndex++;
             if (negativeIndex == 10) {
                 negativeY -= 2;
+                negativeYSphere -=2;
             }
         } else if (array[i][0] == "Stressed") {
             renderedObjects.push( <StressedCube position={[Math.random() * 10 - 5, negativeY, 0]} />);
             negativeIndex++;
             if (negativeIndex == 10) {
                 negativeY -= 2;
+                negativeYSphere -=2;
             }
         } else if (array[i][0] == "Heartbroken") {
             renderedObjects.push( <HeartbrokenSphere position={[Math.random() * 10 - 5, negativeYSphere, 0]} />);
@@ -841,24 +882,28 @@ export default function Rendering() {
             positiveIndex++;
             if (positiveIndex == 10) {
                 positiveY += 2;
+                positiveYSphere -=2;
             }
         } else if (array[i][0] == "Guarded") {
             renderedObjects.push( <GuardedCube position={[Math.random() * 10 - 5, negativeY, 0]} />);
             negativeIndex++;
             if (negativeIndex == 10) {
                 negativeY -= 2;
+                negativeYSphere -=2;
             }
         } else if (array[i][0] == "Strong") {
             renderedObjects.push( <StrongCone position={[Math.random() * 10 - 5, positiveY, 0]} />);
             positiveIndex++;
             if (positiveIndex == 10) {
                 positiveY += 2;
+                positiveYSphere -=2;
             }
         } else if (array[i][0] == "Scared") {
             renderedObjects.push( <ScaredCone position={[Math.random() * 10 - 5, negativeY, 0]} />);
             negativeIndex++;
             if (negativeIndex == 10) {
                 negativeY -= 2;
+                negativeYSphere -=2;
             }
         } else if (array[i][0] == "Excited") {
             renderedObjects.push( <ExcitedSphere position={[Math.random() * 10 - 5, positiveYSphere, 0]} />);
@@ -867,7 +912,7 @@ export default function Rendering() {
         }
     }
     return (
-        <Canvas shadowMap camera={{ position: [0, 0, 15] }}>
+        <Canvas camera={{ position: [0, 0, 5] }}>
             <ambientLight intensity={0.5} />
             <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
             <pointLight position={[-10, -10, -10]} />
