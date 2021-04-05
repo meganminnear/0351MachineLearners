@@ -15,7 +15,6 @@ ReactDOM.render(
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/about" component={About} />
-        <Route path="/Rendering" component={Rendering} />
       </Switch>
     </Router>
   </React.StrictMode>,

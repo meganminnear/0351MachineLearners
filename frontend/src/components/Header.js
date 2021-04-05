@@ -16,9 +16,6 @@ class Header extends React.Component {
             <LinkContainer to="/about">
               <Nav.Link className="mr-5">about us</Nav.Link>
             </LinkContainer>
-            <LinkContainer to="/rendering">
-              <Nav.Link className="mr-5">rendering</Nav.Link>
-            </LinkContainer>
             </Nav>
             <Navbar.Brand>
               <h1>The Sentimental Image</h1>

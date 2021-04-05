@@ -68,11 +68,11 @@ class Home extends React.Component {
       body: JSON.stringify({"text": this.state.input_string})})
     .then(response => {
       response.json().then(res => {
-        console.log(res);
-        console.log(res.x_values);
+        //console.log(res);
+        //console.log(res.x_values);
         this.setState({diagramData: {sentiments: res.x_values.sentiments, movingAverage: res.x_values.movingAverage}})
         this.setState({tokens: res.tokens})
-        //console.log(this.state.tokens)
+        console.log("tokens: " + this.state.tokens)
       })
     })
     .catch(error => console.log("error: " + error));
@@ -135,7 +135,7 @@ class Home extends React.Component {
   }
 
   clearText() {
-    this.setState({diagramData: {sentiments: [], movingAverage: []}, input_string: ""});
+    this.setState({tokens: [], diagramData: {sentiments: [], movingAverage: []}, input_string: ""});
     //this.refs.abstractImage.src = emptyImage;
     this.refs.mainTextArea.value = "";
   }
