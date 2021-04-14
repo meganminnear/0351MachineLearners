@@ -1,3 +1,4 @@
+* {font-family: 'Didot';}
 .main-page {
   color: #797979;
   text-align: center;
@@ -12,6 +13,7 @@ h1, #maintitle {
 }
 
 h4, #subtitle {
+  color: #797979;
   font-weight: normal;
 }
 
