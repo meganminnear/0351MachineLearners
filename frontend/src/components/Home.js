@@ -15,9 +15,11 @@ import Tabs from 'react-bootstrap/Tabs';
 import Tab from 'react-bootstrap/Tab';
 import Image from 'react-bootstrap/Image';
 import Modal from 'react-bootstrap/Modal';
-import { BrowserRouter as Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { VictoryChart, VictoryTheme, VictoryLine, VictoryLegend } from "victory";
 import Rendering from './Rendering';
+
+import Download from './Download';
 
 class Home extends React.Component {
   constructor(props) {
@@ -179,11 +181,11 @@ class Home extends React.Component {
                         <Button variant="secondary" onClick={this.close2DImageDownloadModal}>
                           Cancel
                         </Button>
-                        <a href={exampleImage} download="Sentiment-2D.png">
-                          <Button variant="primary" onClick={this.close2DImageDownloadModal}>
-                            Download
-                          </Button>
-                        </a>
+                        <Router>
+                            <Link to="/download"> 
+                              <Download/>
+                            </Link>
+                        </Router>
                       </Modal.Footer>
                     </Modal>
                   </Tab>
