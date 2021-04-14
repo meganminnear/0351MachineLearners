@@ -68,11 +68,12 @@ class Home extends React.Component {
       body: JSON.stringify({"text": this.state.input_string})})
     .then(response => {
       response.json().then(res => {
-        //console.log(res);
+        console.log("Response:");
+        console.log(res);
         //console.log(res.x_values);
         this.setState({diagramData: {sentiments: res.x_values.sentiments, movingAverage: res.x_values.movingAverage}})
         this.setState({tokens: res.tokens})
-        console.log("tokens: " + this.state.tokens)
+        //console.log("tokens: " + this.state.tokens)
       })
     })
     .catch(error => console.log("error: " + error));

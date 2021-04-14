@@ -248,7 +248,7 @@ function ContentCube(props) {
     )
 
 }
-
+//BUGGED: CubeBufferGeometry is not part of the THREE namespace! Did you forget to extend? Example: https://www.bookbrowse.com/excerpts/index.cfm/book_number/453/page_number/3/harry-potter-and-the-chamber-of-secrets#excerpt
 function CelebrationCube(props) {
     const mesh = useRef()
 
@@ -665,13 +665,13 @@ function ExcitedSphere(props) {
 
 
 const Rendering = ({array}) => {
-    console.log("called")
-    console.log(array)
+    //console.log("called")
+    //console.log(array)
     if (!array) {
         return null;
     }
     //console.log(array[0].emotions)
-    console.log("After check")
+    //console.log("After check")
     let renderedObjects = [];
     let positiveIndex = 0;
     let negativeIndex = 0;
@@ -695,8 +695,8 @@ const Rendering = ({array}) => {
         }
         nonzero_emotions.sort((a, b) => b.confidence - a.confidence)
         //console.log("Nonzeros:");
-        console.log(nonzero_emotions);
-        console.log(nonzero_emotions[0].emotion);
+        //console.log(nonzero_emotions);
+        //console.log(nonzero_emotions[0].emotion);
         //let stripped_emotions = emotions.filter(({entry}) => entry != 0)
         if (nonzero_emotions[0].emotion == "Mirth") {
             renderedObjects.push( <MirthSphere position={[Math.random() * 10 - 5, positiveYSphere, 0]} />);
@@ -916,8 +916,8 @@ const Rendering = ({array}) => {
             }
         }
     }
-    console.log("obs");
-    console.log(renderedObjects);
+    //console.log("obs");
+    //console.log(renderedObjects);
     return (
 
         <Canvas style={{height: 300}}>
