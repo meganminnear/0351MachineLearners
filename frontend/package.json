@@ -18,6 +18,7 @@
     "react-router-bootstrap": "^0.25.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.0",
+    "react-share": "^4.4.0",
     "react-three-fiber": "^5.3.22",
     "three": "^0.127.0",
     "use-react-screenshot": "^1.0.2",

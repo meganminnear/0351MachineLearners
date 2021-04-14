@@ -2,6 +2,9 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Home.css';
 
+import { FacebookShareButton, TwitterShareButton, RedditShareButton } from "react-share";
+import { FacebookIcon, TwitterIcon, RedditIcon } from "react-share";
+
 import emptyImage from './empty_image.png';
 import exampleImage from './example_line_plot.png';
 import abstractImage from './example_abstract_plot.png';
@@ -206,11 +209,11 @@ class Home extends React.Component {
                         <Button variant="secondary" onClick={this.close3DImageDownloadModal}>
                           Cancel
                         </Button>
-                        <a href={abstractImage} download="Sentiment-3D.png">
-                          <Button variant="primary" onClick={this.close3DImageDownloadModal}>
-                            Download
-                          </Button>
-                        </a>
+                        <Router>
+                            <Link to="/download"> 
+                              <Download/>
+                            </Link>
+                        </Router>
                       </Modal.Footer>
                     </Modal>
                   </Tab>
@@ -260,23 +263,27 @@ class Home extends React.Component {
           <Modal.Body>
             <div className="col">
               <Modal.Title className="col no-gutter">
-                <p className="h4 text-center">looks great!</p>
-                <h3 className="h1 text-center">wanna share?</h3>
+                <p className="h4 text-center" style={{margin: 0}}>looks great!</p>
+                <p className="h3 text-center" style={{margin: 0}}>wanna share?</p>
               </Modal.Title>
               <div className='row justify-content-center'>
                 <div className="col text-center">
-                  <a href="https://www.facebook.com/" target="_blank">
-                    <Image width="60%" src={facebookLogo} />
-                  </a>
+                  <FacebookShareButton
+                    url={"https://www.gatech.edu"}
+                    quote={"Check out the visualization of my writing!"}
+                    hashtag="#thesentimentalimage">
+                    <FacebookIcon size={50} round={false} />
+                  </FacebookShareButton>
                 </div>
                 <div className="col text-center">
-                  <a href="https://www.instagram.com/" target="_blank">
-                    <Image width="60%" src={instagramLogo} />
+                  <a href="https://www.reddit.com/" target="_blank">
+                    <RedditIcon size={50} round={false} />
                   </a>
                 </div>
                 <div className="col text-center">
                   <a href="https://www.twitter.com/" target="_blank">
-                    <Image width="60%" src={twitterLogo} />
+                    
+                    <TwitterIcon size={50} round={false} />
                   </a>
                 </div>
               </div>
