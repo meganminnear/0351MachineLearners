@@ -49,8 +49,10 @@ class Home extends React.Component {
     this.closeCSVDownloadModal = this.closeCSVDownloadModal.bind(this);
     this.openShareModal = this.openShareModal.bind(this);
     this.closeShareModal = this.closeShareModal.bind(this);
-    this.getImage = this.getImage.bind(this);
+    this.chartRef = React.createRef();
+    this.saveChart = this.saveChart.bind(this);
     this.callServer = this.callServer.bind(this);
+    this.triggerDownload = this.triggerDownload.bind(this);
   }
 
   textUpdate(event) {
@@ -86,8 +88,46 @@ class Home extends React.Component {
 
   }
 
-  getImage() {
-    //return this.state.diagramImage;
+  triggerDownload (imgURI) {
+    let evt = new MouseEvent("click", {
+      view: window,
+      bubbles: false,
+      cancelable: true
+    });
+
+    let a = document.createElement("a");
+    a.setAttribute("download", "2d-polarity-graph.png");
+    a.setAttribute("href", imgURI);
+    a.setAttribute("target", "_blank");
+
+    a.dispatchEvent(evt);
+  }
+
+  saveChart() {
+    let svg = document.getElementById("chartID").children[0].children[0];
+    let {width, height} = svg.getBBox();
+    let data = (new XMLSerializer()).serializeToString(svg);
+    let DOMURL = window.URL || window.webkitURL || window;
+
+    let img = document.createElement("img");
+    let svgBlob = new Blob([data], {type: 'image/svg+xml;charset=utf-8'});
+    let url = DOMURL.createObjectURL(svgBlob);
+
+
+    img.onload = () => {
+      let canvas = document.createElement("canvas");
+      canvas.width = width;
+      canvas.height = height;
+      let ctx = canvas.getContext("2d");
+      ctx.drawImage(img, 0, 0, width, height);
+      DOMURL.revokeObjectURL(url);
+
+      let imgURI = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
+
+      this.triggerDownload(imgURI);
+    }
+    img.src = url;
+
   }
 
 
@@ -165,13 +205,15 @@ class Home extends React.Component {
               <div className="col-6 px-3">
                 <Tabs defaultActiveKey="linear" id="figure-tabs" transition={false}>
                   <Tab eventKey="linear" title="linear">
-                    <VictoryChart theme={VictoryTheme.material}>
-                      <VictoryLegend orientation = {"horizontal"} x={100} y={20} data = {[
-                        {name: "Sentiment", symbol: {fill:"black"}},
-                        {name: "Running Average", symbol: {fill:"red"}}]}/>
-                      <VictoryLine data={this.state.diagramData.sentiments}/>
-                      <VictoryLine style={{ data: { stroke: "red" } }} data={this.state.diagramData.movingAverage}/>
-                    </VictoryChart>
+                    <div id="chartID">
+                      <VictoryChart ref={this.chartRef} theme={VictoryTheme.material}>
+                        <VictoryLegend orientation = {"horizontal"} x={100} y={20} data = {[
+                          {name: "Sentiment", symbol: {fill:"black"}},
+                          {name: "Running Average", symbol: {fill:"red"}}]}/>
+                        <VictoryLine data={this.state.diagramData.sentiments}/>
+                        <VictoryLine style={{ data: { stroke: "red" } }} data={this.state.diagramData.movingAverage}/>
+                      </VictoryChart>
+                    </div>
                     {/*2D buttons and modal*/}
                     <Button className="mx-2" id="green" variant="primary" onClick={this.openCSVDownloadModal}>download CSV</Button>
                     <Button className="mx-2" id="pink" variant="primary" onClick={this.openShareModal}>share!</Button>
@@ -185,11 +227,9 @@ class Home extends React.Component {
                         <Button variant="secondary" onClick={this.close2DImageDownloadModal}>
                           Cancel
                         </Button>
-                        <Router>
-                            <Link to="/download"> 
-                              <Download/>
-                            </Link>
-                        </Router>
+                        <Button onClick={this.saveChart}>
+                          Download
+                        </Button>
                       </Modal.Footer>
                     </Modal>
                   </Tab>
@@ -211,7 +251,7 @@ class Home extends React.Component {
                           Cancel
                         </Button>
                         <Router>
-                            <Link to="/download"> 
+                            <Link to="/download">
                               <Download/>
                             </Link>
                         </Router>
@@ -283,7 +323,7 @@ class Home extends React.Component {
                 </div>
                 <div className="col text-center">
                   <a href="https://www.twitter.com/" target="_blank">
-                    
+
                     <TwitterIcon size={50} round={false} />
                   </a>
                 </div>
