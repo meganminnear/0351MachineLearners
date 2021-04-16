@@ -304,28 +304,30 @@ class Home extends React.Component {
           <Modal.Body>
             <div className="col">
               <Modal.Title className="col no-gutter">
-                <p className="h4 text-center" style={{margin: 0}}>looks great!</p>
-                <p className="h3 text-center" style={{margin: 0}}>wanna share?</p>
+                <p className="h4 text-center" style={{margin: 0}}>Tell your friends about The Sentimental Image!</p>
               </Modal.Title>
               <div className='row justify-content-center'>
                 <div className="col text-center">
                   <FacebookShareButton
                     url={"https://www.gatech.edu"}
-                    quote={"Check out the visualization of my writing!"}
+                    quote={"Check out The Sentimental Image! Visualize your writing!"}
                     hashtag="#thesentimentalimage">
                     <FacebookIcon size={50} round={false} />
                   </FacebookShareButton>
                 </div>
                 <div className="col text-center">
-                  <a href="https://www.reddit.com/" target="_blank">
+                  <RedditShareButton
+                    url={"https://www.gatech.edu"}
+                    quote={"Check out The Sentimental Image! Visualize your writing!"}>
                     <RedditIcon size={50} round={false} />
-                  </a>
+                  </RedditShareButton>
                 </div>
                 <div className="col text-center">
-                  <a href="https://www.twitter.com/" target="_blank">
-
+                  <TwitterShareButton
+                    url={"https://www.gatech.edu"}
+                    quote={"Check out The Sentimental Image! Visualize your writing!"}>
                     <TwitterIcon size={50} round={false} />
-                  </a>
+                  </TwitterShareButton>
                 </div>
               </div>
             </div>
