@@ -820,7 +820,7 @@ const Rendering = ({array}) => {
             negativeX += 2;
             if (negativeIndex == 10) {
                 negativeY -= 2;
-                negative = -10;
+                negativeX = -10;
             }
         } else if (nonzero_emotions[0].emotion == "Strong") {
             renderedObjects.push( <StrongCone position={[positiveX, positiveY, 0]} />);
