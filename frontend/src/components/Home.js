@@ -65,7 +65,7 @@ class Home extends React.Component {
   callServer() {
     //this.setState({diagramData: [{x: 1, y: Math.floor(Math.random() * 10)}, {x: 2, y: Math.floor(Math.random() * 10)}, {x: 3, y: Math.floor(Math.random() * 10)}]});
     console.log("Sent to server: " + this.state.input_string);
-    fetch("http://localhost:5000/api/emotions", {
+    fetch("http://208.87.134.10/api/emotions", {
       method: "POST",
       credentials: 'same-origin',
       headers: {
