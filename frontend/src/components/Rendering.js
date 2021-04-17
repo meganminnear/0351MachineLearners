@@ -19,10 +19,6 @@ import { Canvas, useFrame } from '@react-three/fiber'
 function MirthSphere(props) {
     const mesh = useRef()
 
-    useFrame(() => {
-        mesh.current.rotation.x = mesh.current.rotation.y += 0.01
-    })
-
     return (
         <mesh
             {...props}
@@ -36,10 +32,6 @@ function MirthSphere(props) {
 
 function DiscontentmentTriangle(props) {
     const mesh = useRef()
-
-    useFrame(() => {
-        mesh.current.rotation.x = mesh.current.rotation.y += 0.01
-    })
 
     return (
         <mesh
@@ -55,10 +47,6 @@ function DiscontentmentTriangle(props) {
 function PleasureSphere(props) {
     const mesh = useRef()
 
-    useFrame(() => {
-        mesh.current.rotation.x = mesh.current.rotation.y += 0.01
-    })
-
     return (
         <mesh
             {...props}
@@ -72,10 +60,6 @@ function PleasureSphere(props) {
 
 function SadnessSphere(props) {
     const mesh = useRef()
-
-    useFrame(() => {
-        mesh.current.rotation.x = mesh.current.rotation.y += 0.01
-    })
 
     return (
         <mesh
@@ -91,10 +75,6 @@ function SadnessSphere(props) {
 function LoveSphere(props) {
     const mesh = useRef()
 
-    useFrame(() => {
-        mesh.current.rotation.x = mesh.current.rotation.y += 0.01
-    })
-
     return (
         <mesh
             {...props}
@@ -109,10 +89,6 @@ function LoveSphere(props) {
 function ApprovalCube(props) {
     const mesh = useRef()
 
-    useFrame(() => {
-        mesh.current.rotation.x = mesh.current.rotation.y += 0.01
-    })
-
   return (
         <mesh
         {...props}
@@ -125,10 +101,6 @@ function ApprovalCube(props) {
 
 function HappinessSphere(props) {
     const mesh = useRef()
-
-    useFrame(() => {
-        mesh.current.rotation.x = mesh.current.rotation.y += 0.01
-    })
 
     return (
         <mesh
@@ -144,10 +116,6 @@ function HappinessSphere(props) {
 function ConfidenceCube(props) {
     const mesh = useRef()
 
-    useFrame(() => {
-        mesh.current.rotation.x = mesh.current.rotation.y += 0.01
-    })
-
     return (
         <mesh
             {...props}
@@ -161,10 +129,6 @@ function ConfidenceCube(props) {
 
 function GiddySphere(props) {
     const mesh = useRef()
-
-    useFrame(() => {
-        mesh.current.rotation.x = mesh.current.rotation.y += 0.01
-    })
 
     return (
         <mesh
@@ -180,10 +144,6 @@ function GiddySphere(props) {
 function JoySphere(props) {
     const mesh = useRef()
 
-    useFrame(() => {
-        mesh.current.rotation.x = mesh.current.rotation.y += 0.01
-    })
-
     return (
         <mesh
             {...props}
@@ -197,10 +157,6 @@ function JoySphere(props) {
 
 function EmbarrassedSphere(props) {
     const mesh = useRef()
-
-    useFrame(() => {
-        mesh.current.rotation.x = mesh.current.rotation.y += 0.01
-    })
 
     return (
         <mesh
@@ -216,10 +172,6 @@ function EmbarrassedSphere(props) {
 function BoredCube(props) {
     const mesh = useRef()
 
-    useFrame(() => {
-        mesh.current.rotation.x = mesh.current.rotation.y += 0.01
-    })
-
     return (
         <mesh
             {...props}
@@ -233,10 +185,6 @@ function BoredCube(props) {
 
 function ContentCube(props) {
     const mesh = useRef()
-
-    useFrame(() => {
-        mesh.current.rotation.x = mesh.current.rotation.y += 0.01
-    })
 
     return (
         <mesh
@@ -252,15 +200,11 @@ function ContentCube(props) {
 function CelebrationCube(props) {
     const mesh = useRef()
 
-    useFrame(() => {
-        mesh.current.rotation.x = mesh.current.rotation.y += 0.01
-    })
-
     return (
         <mesh
             {...props}
             ref={mesh}>
-            <cubeBufferGeometry args={[1, 1, 1]} />
+            <boxBufferGeometry args={[1, 1, 1]} />
             <meshStandardMaterial color="#ffd700" />
         </mesh>
     )
@@ -269,10 +213,6 @@ function CelebrationCube(props) {
 
 function HopelessSphere(props) {
     const mesh = useRef()
-
-    useFrame(() => {
-        mesh.current.rotation.x = mesh.current.rotation.y += 0.01
-    })
 
     return (
         <mesh
@@ -288,10 +228,6 @@ function HopelessSphere(props) {
 function NervousCone(props) {
     const mesh = useRef()
 
-    useFrame(() => {
-        mesh.current.rotation.x = mesh.current.rotation.y += 0.01
-    })
-
     return (
         <mesh
             {...props}
@@ -305,10 +241,6 @@ function NervousCone(props) {
 
 function HopeSphere(props) {
     const mesh = useRef()
-
-    useFrame(() => {
-        mesh.current.rotation.x = mesh.current.rotation.y += 0.01
-    })
 
     return (
         <mesh
@@ -324,15 +256,11 @@ function HopeSphere(props) {
 function ConfusedCube(props) {
     const mesh = useRef()
 
-    useFrame(() => {
-        mesh.current.rotation.x = mesh.current.rotation.y += 0.01
-    })
-
     return (
         <mesh
             {...props}
             ref={mesh}>
-            <cubeBufferGeometry args={[1, 1, 1]} />
+            <boxBufferGeometry args={[1, 1, 1]} />
             <meshStandardMaterial color="#f7ae48" />
         </mesh>
     )
@@ -341,10 +269,6 @@ function ConfusedCube(props) {
 
 function AffectionateSphere(props) {
     const mesh = useRef()
-
-    useFrame(() => {
-        mesh.current.rotation.x = mesh.current.rotation.y += 0.01
-    })
 
     return (
         <mesh
@@ -360,10 +284,6 @@ function AffectionateSphere(props) {
 function DisappointedTriangle(props) {
     const mesh = useRef()
 
-    useFrame(() => {
-        mesh.current.rotation.x = mesh.current.rotation.y += 0.01
-    })
-
     return (
         <mesh
             {...props}
@@ -377,10 +297,6 @@ function DisappointedTriangle(props) {
 
 function ShySphere(props) {
     const mesh = useRef()
-
-    useFrame(() => {
-        mesh.current.rotation.x = mesh.current.rotation.y += 0.01
-    })
 
     return (
         <mesh
@@ -396,10 +312,6 @@ function ShySphere(props) {
 function FrustratedTriangle(props) {
     const mesh = useRef()
 
-    useFrame(() => {
-        mesh.current.rotation.x = mesh.current.rotation.y += 0.01
-    })
-
     return (
         <mesh
             {...props}
@@ -413,10 +325,6 @@ function FrustratedTriangle(props) {
 
 function AngerTriangle(props) {
     const mesh = useRef()
-
-    useFrame(() => {
-        mesh.current.rotation.x = mesh.current.rotation.y += 0.01
-    })
 
     return (
         <mesh
@@ -432,10 +340,6 @@ function AngerTriangle(props) {
 function PlayfulSphere(props) {
     const mesh = useRef()
 
-    useFrame(() => {
-        mesh.current.rotation.x = mesh.current.rotation.y += 0.01
-    })
-
     return (
         <mesh
             {...props}
@@ -449,10 +353,6 @@ function PlayfulSphere(props) {
 
 function IrritatedCone(props) {
     const mesh = useRef()
-
-    useFrame(() => {
-        mesh.current.rotation.x = mesh.current.rotation.y += 0.01
-    })
 
     return (
         <mesh
@@ -468,10 +368,6 @@ function IrritatedCone(props) {
 function SickCone(props) {
     const mesh = useRef()
 
-    useFrame(() => {
-        mesh.current.rotation.x = mesh.current.rotation.y += 0.01
-    })
-
     return (
         <mesh
             {...props}
@@ -485,10 +381,6 @@ function SickCone(props) {
 
 function CuriosityCylinder(props) {
     const mesh = useRef()
-
-    useFrame(() => {
-        mesh.current.rotation.x = mesh.current.rotation.y += 0.01
-    })
 
     return (
         <mesh
@@ -504,10 +396,6 @@ function CuriosityCylinder(props) {
 function ViolentCone(props) {
     const mesh = useRef()
 
-    useFrame(() => {
-        mesh.current.rotation.x = mesh.current.rotation.y += 0.01
-    })
-
     return (
         <mesh
             {...props}
@@ -521,10 +409,6 @@ function ViolentCone(props) {
 
 function EvilTriangle(props) {
     const mesh = useRef()
-
-    useFrame(() => {
-        mesh.current.rotation.x = mesh.current.rotation.y += 0.01
-    })
 
     return (
         <mesh
@@ -540,10 +424,6 @@ function EvilTriangle(props) {
 function StressedCube(props) {
     const mesh = useRef()
 
-    useFrame(() => {
-        mesh.current.rotation.x = mesh.current.rotation.y += 0.01
-    })
-
     return (
         <mesh
             {...props}
@@ -557,10 +437,6 @@ function StressedCube(props) {
 
 function HeartbrokenSphere(props) {
     const mesh = useRef()
-
-    useFrame(() => {
-        mesh.current.rotation.x = mesh.current.rotation.y += 0.01
-    })
 
     return (
         <mesh
@@ -576,10 +452,6 @@ function HeartbrokenSphere(props) {
 function SurprisedCube(props) {
     const mesh = useRef()
 
-    useFrame(() => {
-        mesh.current.rotation.x = mesh.current.rotation.y += 0.01
-    })
-
     return (
         <mesh
             {...props}
@@ -593,10 +465,6 @@ function SurprisedCube(props) {
 
 function GuardedCube(props) {
     const mesh = useRef()
-
-    useFrame(() => {
-        mesh.current.rotation.x = mesh.current.rotation.y += 0.01
-    })
 
     return (
         <mesh
@@ -612,10 +480,6 @@ function GuardedCube(props) {
 function StrongCone(props) {
     const mesh = useRef()
 
-    useFrame(() => {
-        mesh.current.rotation.x = mesh.current.rotation.y += 0.01
-    })
-
     return (
         <mesh
             {...props}
@@ -630,10 +494,6 @@ function StrongCone(props) {
 function ScaredCone(props) {
     const mesh = useRef()
 
-    useFrame(() => {
-        mesh.current.rotation.x = mesh.current.rotation.y += 0.01
-    })
-
     return (
         <mesh
             {...props}
@@ -647,10 +507,6 @@ function ScaredCone(props) {
 
 function ExcitedSphere(props) {
     const mesh = useRef()
-
-    useFrame(() => {
-        mesh.current.rotation.x = mesh.current.rotation.y += 0.01
-    })
 
     return (
         <mesh
