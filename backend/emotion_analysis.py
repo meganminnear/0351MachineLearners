@@ -17,6 +17,9 @@ batch_size = 32
 print("Running NLTK download 'punkt'")
 nltk.download('punkt')
 
+print("Running NLTK download 'vader_lexicon'")
+nltk.download('vader_lexicon')
+
 print("Tokenizing using dictionary from {}".format(VOCAB_PATH))
 with open(VOCAB_PATH, 'r') as f:
     vocabulary = json.load(f)
