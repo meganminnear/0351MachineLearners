@@ -537,6 +537,10 @@ const Rendering = ({array}) => {
     let negativeY = -1;
     let positiveYSphere = 2;
     let negativeYSphere = -3;
+    let negativeXSphere = -10;
+    let positiveXSphere = -10;
+    let negativeX = -10;
+    let positiveX = -10;
     for (let i = 0; i < array.length; i++) {
         let emotions = array[i].emotions;
         let nonzero_emotions = []
@@ -555,220 +559,292 @@ const Rendering = ({array}) => {
         //console.log(nonzero_emotions[0].emotion);
         //let stripped_emotions = emotions.filter(({entry}) => entry != 0)
         if (nonzero_emotions[0].emotion == "Mirth") {
-            renderedObjects.push( <MirthSphere position={[Math.random() * 10 - 5, positiveYSphere, 0]} />);
+            renderedObjects.push( <MirthSphere position={[positiveXSphere, positiveYSphere, 0]} />);
             spherePositiveIndex++;
+            positiveXSphere += 2;
             if (spherePositiveIndex == 5) {
                 positiveYSphere += 2;
+                positiveXSphere = -10;
             }
         } else if (nonzero_emotions[0].emotion == "Discontentment") {
-            renderedObjects.push( <DiscontentmentTriangle position={[Math.random() * 10 - 5, negativeY, 0]} />);
+            renderedObjects.push( <DiscontentmentTriangle position={[negativeX, negativeY, 0]} />);
             negativeIndex++;
+            negativeX += 2;
             if (negativeIndex == 10) {
                 negativeY -= 2;
+                negativeX = -10;
             }
         } else if (nonzero_emotions[0].emotion == "Pleasure") {
-            renderedObjects.push( <PleasureSphere position={[Math.random() * 10 - 5, positiveYSphere, 0]} />);
+            renderedObjects.push( <PleasureSphere position={[positiveXSphere, positiveYSphere, 0]} />);
             spherePositiveIndex++;
+            positiveXSphere += 2;
             if (spherePositiveIndex == 5) {
                 positiveYSphere += 2;
+                positiveXSphere = -10;
             }
         } else if (nonzero_emotions[0].emotion == "Sadness") {
-            renderedObjects.push( <SadnessSphere position={[Math.random() * 10 - 5, negativeYSphere, 0]} />);
+            renderedObjects.push( <SadnessSphere position={[negativeXSphere, negativeYSphere, 0]} />);
             sphereNegativeIndex++;
+            negativeXSphere += 2;
             if (sphereNegativeIndex == 5) {
                 negativeYSphere += 2;
+                negativeXSphere = -10;
             }
         } else if (nonzero_emotions[0].emotion == "Love") {
-            renderedObjects.push( <LoveSphere position={[Math.random() * 10 - 5, positiveYSphere, 0]} />);
+            renderedObjects.push( <LoveSphere position={[positiveXSphere, positiveYSphere, 0]} />);
             spherePositiveIndex++;
+            positiveXSphere += 2;
             if (spherePositiveIndex == 5) {
                 positiveYSphere += 2;
+                positiveXSphere = -10;
             }
         } else if (nonzero_emotions[0].emotion == "Approval") {
-            renderedObjects.push( <ApprovalCube position={[Math.random() * 10 - 5, positiveY, 0]} />);
+            renderedObjects.push( <ApprovalCube position={[positiveX, positiveY, 0]} />);
             positiveIndex++;
+            positiveX += 2;
             if (positiveIndex == 10) {
                 positiveY += 2;
+                positiveX = -10;
             }
         } else if (nonzero_emotions[0].emotion == "Happiness") {
-            renderedObjects.push( <HappinessSphere position={[Math.random() * 10 - 5, positiveYSphere, 0]} />);
+            renderedObjects.push( <HappinessSphere position={[positiveXSphere, positiveYSphere, 0]} />);
             spherePositiveIndex++;
+            positiveXSphere += 2;
             if (spherePositiveIndex == 5) {
                 positiveYSphere += 2;
+                positiveXSphere = -10;
             }
         } else if (nonzero_emotions[0].emotion == "Confidence") {
-            renderedObjects.push( <ConfidenceCube position={[Math.random() * 10 - 5, positiveY, 0]} />);
+            renderedObjects.push( <ConfidenceCube position={[positiveX, positiveY, 0]} />);
             positiveIndex++;
+            positiveX += 2;
             if (positiveIndex == 10) {
                 positiveY += 2;
+                positiveX = -10;
             }
         } else if (nonzero_emotions[0].emotion == "Giddy") {
-            renderedObjects.push( <GiddySphere position={[Math.random() * 10 - 5, positiveYSphere, 0]} />);
+            renderedObjects.push( <GiddySphere position={[positiveXSphere, positiveYSphere, 0]} />);
             spherePositiveIndex++;
+            positiveXSphere += 2;
             if (spherePositiveIndex == 5) {
                 positiveYSphere += 2;
+                positiveXSphere = -10;
             }
         } else if (nonzero_emotions[0].emotion == "Joy") {
-            renderedObjects.push( <JoySphere position={[Math.random() * 10 - 5, positiveYSphere, 0]} />);
+            renderedObjects.push( <JoySphere position={[positiveXSphere, positiveYSphere, 0]} />);
             spherePositiveIndex++;
+            positiveXSphere += 2;
             if (spherePositiveIndex == 5) {
                 positiveYSphere += 2;
+                positiveXSphere = -10;
             }
         } else if (nonzero_emotions[0].emotion == "Embarrassed") {
-            renderedObjects.push( <EmbarrassedSphere position={[Math.random() * 10 - 5, negativeYSphere, 0]} />);
+            renderedObjects.push( <EmbarrassedSphere position={[negativeXSphere, negativeYSphere, 0]} />);
             sphereNegativeIndex++;
+            negativeXSphere += 2;
             if (sphereNegativeIndex == 5) {
                 negativeYSphere += 2;
+                negativeXSphere = -10;
             }
         } else if (nonzero_emotions[0].emotion == "Bored") {
-            renderedObjects.push( <BoredCube position={[Math.random() * 10 - 5, negativeY, 0]} />);
+            renderedObjects.push( <BoredCube position={[negativeX, negativeY, 0]} />);
             negativeIndex++;
+            negativeX += 2;
             if (negativeIndex == 10) {
                 negativeY -= 2;
+                negativeX = -10;
             }
         } else if (nonzero_emotions[0].emotion == "Content") {
-            renderedObjects.push( <ContentCube position={[Math.random() * 10 - 5, positiveY, 0]} />);
+            renderedObjects.push( <ContentCube position={[positiveX, positiveY, 0]} />);
             positiveIndex++;
+            positiveX += 2;
             if (positiveIndex == 10) {
                 positiveY += 2;
+                positiveX = -10;
             }
         } else if (nonzero_emotions[0].emotion == "Celebration") {
-            renderedObjects.push( <CelebrationCube position={[Math.random() * 10 - 5, positiveY, 0]} />);
+            renderedObjects.push( <CelebrationCube position={[positiveX, positiveY, 0]} />);
             positiveIndex++;
+            positiveX += 2;
             if (positiveIndex == 10) {
                 positiveY += 2;
+                positiveX = -10;
             }
         } else if (nonzero_emotions[0].emotion == "Hopeless") {
-            renderedObjects.push( <HopelessSphere position={[Math.random() * 10 - 5, negativeYSphere, 0]} />);
+            renderedObjects.push( <HopelessSphere position={[negativeXSphere, negativeYSphere, 0]} />);
             sphereNegativeIndex++;
+            negativeXSphere += 2;
             if (sphereNegativeIndex == 5) {
                 negativeYSphere += 2;
+                negativeXSphere = -10;
             }
         } else if (nonzero_emotions[0].emotion == "Nervous") {
-            renderedObjects.push( <NervousCone position={[Math.random() * 10 - 5, negativeY, 0]} />);
+            renderedObjects.push( <NervousCone position={[negativeX, negativeY, 0]} />);
             negativeIndex++;
+            negativeX += 2;
             if (negativeIndex == 10) {
                 negativeY -= 2;
+                negativeX = -10;
             }
         } else if (nonzero_emotions[0].emotion == "Hope") {
-            renderedObjects.push( <HopeSphere position={[Math.random() * 10 - 5, positiveYSphere, 0]} />);
+            renderedObjects.push( <HopeSphere position={[positiveXSphere, positiveYSphere, 0]} />);
             spherePositiveIndex++;
+            positiveXSphere += 2;
             if (spherePositiveIndex == 5) {
                 positiveYSphere += 2;
+                positiveXSphere = -10;
             }
         } else if (nonzero_emotions[0].emotion == "Confused") {
-            renderedObjects.push( <ConfusedCube position={[Math.random() * 10 - 5, negativeY, 0]} />);
+            renderedObjects.push( <ConfusedCube position={[negativeX, negativeY, 0]} />);
             negativeIndex++;
+            negativeX += 2;
             if (negativeIndex == 10) {
                 negativeY -= 2;
+                negativeX = -10;
             }
         } else if (nonzero_emotions[0].emotion == "Affectionate") {
-            renderedObjects.push( <AffectionateSphere position={[Math.random() * 10 - 5, positiveYSphere, 0]} />);
+            renderedObjects.push( <AffectionateSphere position={[positiveXSphere, positiveYSphere, 0]} />);
             spherePositiveIndex++;
+            positiveXSphere += 2;
             if (spherePositiveIndex == 5) {
                 positiveYSphere += 2;
+                positiveXSphere = -10;
             }
         } else if (nonzero_emotions[0].emotion == "Disappointed") {
-            renderedObjects.push( <DisappointedTriangle position={[Math.random() * 10 - 5, negativeY, 0]} />);
+            renderedObjects.push( <DisappointedTriangle position={[negativeX, negativeY, 0]} />);
             negativeIndex++;
+            negativeX += 2;
             if (negativeIndex == 10) {
                 negativeY -= 2;
+                negativeX = -10;
             }
         } else if (nonzero_emotions[0].emotion == "Shy") {
-            renderedObjects.push( <ShySphere position={[Math.random() * 10 - 5, negativeYSphere, 0]} />);
+            renderedObjects.push( <ShySphere position={[negativeXSphere, negativeYSphere, 0]} />);
             sphereNegativeIndex++;
+            negativeXSphere += 2;
             if (sphereNegativeIndex == 5) {
                 negativeYSphere += 2;
+                negativeXSphere = -10;
             }
         } else if (nonzero_emotions[0].emotion == "Frustrated") {
-            renderedObjects.push( <FrustratedTriangle position={[Math.random() * 10 - 5, negativeY, 0]} />);
+            renderedObjects.push( <FrustratedTriangle position={[negativeX, negativeY, 0]} />);
             negativeIndex++;
+            negativeX += 2;
             if (negativeIndex == 10) {
                 negativeY -= 2;
+                negativeX = -10;
             }
         } else if (nonzero_emotions[0].emotion == "Anger") {
-            renderedObjects.push( <AngerTriangle position={[Math.random() * 10 - 5, negativeY, 0]} />);
+            renderedObjects.push( <AngerTriangle position={[negativeX, negativeY, 0]} />);
             negativeIndex++;
+            negativeX += 2;
             if (negativeIndex == 10) {
                 negativeY -= 2;
+                negativeX = -10;
             }
         } else if (nonzero_emotions[0].emotion == "Playful") {
-            renderedObjects.push( <PlayfulSphere position={[Math.random() * 10 - 5, positiveYSphere, 0]} />);
+            renderedObjects.push( <PlayfulSphere position={[positiveXSphere, positiveYSphere, 0]} />);
             spherePositiveIndex++;
+            positiveXSphere += 2;
             if (spherePositiveIndex == 5) {
                 positiveYSphere += 2;
+                positiveXSphere = -10;
             }
         } else if (nonzero_emotions[0].emotion == "Irritated") {
-            renderedObjects.push( <IrritatedCone position={[Math.random() * 10 - 5, negativeY, 0]} />);
+            renderedObjects.push( <IrritatedCone position={[negativeX, negativeY, 0]} />);
             negativeIndex++;
+            negativeX += 2;
             if (negativeIndex == 10) {
                 negativeY -= 2;
+                negativeX = -10;
             }
         } else if (nonzero_emotions[0].emotion == "Sick") {
-            renderedObjects.push( <SickCone position={[Math.random() * 10 - 5, negativeY, 0]} />);
+            renderedObjects.push( <SickCone position={[negativeX, negativeY, 0]} />);
             negativeIndex++;
+            negativeX += 2;
             if (negativeIndex == 10) {
                 negativeY -= 2;
+                negativeX = -10;
             }
         } else if (nonzero_emotions[0].emotion == "Curiosity") {
-            renderedObjects.push( <CuriosityCylinder position={[Math.random() * 10 - 5, positiveY, 0]} />);
+            renderedObjects.push( <CuriosityCylinder position={[positiveX, positiveY, 0]} />);
             positiveIndex++;
+            positiveX += 2;
             if (positiveIndex == 10) {
                 positiveY += 2;
+                positiveX = -10;
             }
         } else if (nonzero_emotions[0].emotion == "Violent") {
-            renderedObjects.push( <ViolentCone position={[Math.random() * 10 - 5, negativeY, 0]} />);
+            renderedObjects.push( <ViolentCone position={[negativeX, negativeY, 0]} />);
             negativeIndex++;
+            negativeX += 2;
             if (negativeIndex == 10) {
                 negativeY -= 2;
+                negativeX = -10;
             }
         } else if (nonzero_emotions[0].emotion == "Evil") {
-            renderedObjects.push( <EvilTriangle position={[Math.random() * 10 - 5, negativeY, 0]} />);
+            renderedObjects.push( <EvilTriangle position={[negativeX, negativeY, 0]} />);
             negativeIndex++;
+            negativeX += 2;
             if (negativeIndex == 10) {
                 negativeY -= 2;
+                negativeX = -10;
             }
         } else if (nonzero_emotions[0].emotion == "Stressed") {
-            renderedObjects.push( <StressedCube position={[Math.random() * 10 - 5, negativeY, 0]} />);
+            renderedObjects.push( <StressedCube position={[negativeX, negativeY, 0]} />);
             negativeIndex++;
+            negativeX += 2;
             if (negativeIndex == 10) {
                 negativeY -= 2;
+                negativeX = -10;
             }
         } else if (nonzero_emotions[0].emotion == "Heartbroken") {
-            renderedObjects.push( <HeartbrokenSphere position={[Math.random() * 10 - 5, negativeYSphere, 0]} />);
+            renderedObjects.push( <HeartbrokenSphere position={[negativeXSphere, negativeYSphere, 0]} />);
             sphereNegativeIndex++;
+            negativeXSphere += 2;
             if (sphereNegativeIndex == 5) {
                 negativeYSphere += 2;
+                negativeXSphere = -10;
             }
         } else if (nonzero_emotions[0].emotion == "Surprised") {
-            renderedObjects.push( <SurprisedCube position={[Math.random() * 10 - 5, positiveY, 0]} />);
+            renderedObjects.push( <SurprisedCube position={[positiveX, positiveY, 0]} />);
             positiveIndex++;
+            positiveX += 2;
             if (positiveIndex == 10) {
                 positiveY += 2;
+                positiveX = -10;
             }
         } else if (nonzero_emotions[0].emotion == "Guarded") {
-            renderedObjects.push( <GuardedCube position={[Math.random() * 10 - 5, negativeY, 0]} />);
+            renderedObjects.push( <GuardedCube position={[negativeX, negativeY, 0]} />);
             negativeIndex++;
+            negativeX += 2;
             if (negativeIndex == 10) {
                 negativeY -= 2;
+                negative = -10;
             }
         } else if (nonzero_emotions[0].emotion == "Strong") {
-            renderedObjects.push( <StrongCone position={[Math.random() * 10 - 5, positiveY, 0]} />);
+            renderedObjects.push( <StrongCone position={[positiveX, positiveY, 0]} />);
             positiveIndex++;
+            positiveX += 2;
             if (positiveIndex == 10) {
                 positiveY += 2;
+                positiveX = -10;
             }
         } else if (nonzero_emotions[0].emotion == "Scared") {
-            renderedObjects.push( <ScaredCone position={[Math.random() * 10 - 5, negativeY, 0]} />);
+            renderedObjects.push( <ScaredCone position={[negativeX, negativeY, 0]} />);
             negativeIndex++;
+            negativeX += 2;
             if (negativeIndex == 10) {
                 negativeY -= 2;
+                negativeX = -10;
             }
         } else if (nonzero_emotions[0].emotion == "Excited") {
-            renderedObjects.push( <ExcitedSphere position={[Math.random() * 10 - 5, positiveYSphere, 0]} />);
+            renderedObjects.push( <ExcitedSphere position={[positiveXSphere, positiveYSphere, 0]} />);
             spherePositiveIndex++;
+            positiveXSphere += 2;
             if (spherePositiveIndex == 5) {
                 positiveYSphere += 2;
+                positiveXSphere = -10;
             }
         }
     }
