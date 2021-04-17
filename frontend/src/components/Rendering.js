@@ -858,7 +858,7 @@ const Rendering = ({array}) => {
     //console.log(renderedObjects);
     return (
 
-        <Canvas style={{height: 300, background: '#ccffff'}}>
+        <Canvas style={{height: 300, background: 'linear-gradient(to right, rgba(204, 255, 255, 0), rgba(204, 255, 255, 1))'}}>
             <ambientLight intensity={0.5} />
             <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
             <pointLight position={[-10, -10, -10]} />
