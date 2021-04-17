@@ -663,7 +663,7 @@ const Rendering = ({array}) => {
         } else if (nonzero_emotions[0].emotion == "Content") {
             renderedObjects.push( <ContentSphere position={[positiveXSphere, positiveYSphere, 0]} />);
             spherePositiveIndex++;
-            positiveSphereX += 1.5;
+            positiveXSphere += 1.5;
             if (spherePositiveIndex == maxSphere) {
                 positiveYSphere += 1.5;
                 positiveXSphere = startPosition;
