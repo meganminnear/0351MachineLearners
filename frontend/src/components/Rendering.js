@@ -232,7 +232,7 @@ function NervousCone(props) {
         <mesh
             {...props}
             ref={mesh}>
-            <coneBufferGeometry args={[0.5, 2, 20, 32]} />
+            <coneBufferGeometry args={[0.5, -2, 20, 32]} />
             <meshStandardMaterial color="#f03232" />
         </mesh>
     )
@@ -358,7 +358,7 @@ function IrritatedCone(props) {
         <mesh
             {...props}
             ref={mesh}>
-            <coneBufferGeometry args={[0.5, 2, 20, 32]} />
+            <coneBufferGeometry args={[0.5, -2, 20, 32]} />
             <meshStandardMaterial color="#d16a60" />
         </mesh>
     )
@@ -372,7 +372,7 @@ function SickCone(props) {
         <mesh
             {...props}
             ref={mesh}>
-            <coneBufferGeometry args={[0.5, 2, 20, 32]} />
+            <coneBufferGeometry args={[0.5, -2, 20, 32]} />
             <meshStandardMaterial color="#33913f" />
         </mesh>
     )
@@ -400,7 +400,7 @@ function ViolentCone(props) {
         <mesh
             {...props}
             ref={mesh}>
-            <coneBufferGeometry args={[0.5, 2, 20, 32]} />
+            <coneBufferGeometry args={[0.5, -2, 20, 32]} />
             <meshStandardMaterial color="#ff3814" />
         </mesh>
     )
@@ -498,7 +498,7 @@ function ScaredCone(props) {
         <mesh
             {...props}
             ref={mesh}>
-            <coneBufferGeometry args={[0.2, 3, 20, 32]} />
+            <coneBufferGeometry args={[0.2, -3, 20, 32]} />
             <meshStandardMaterial color="#761bd1" />
         </mesh>
     )
