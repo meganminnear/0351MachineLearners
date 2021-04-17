@@ -183,14 +183,14 @@ function BoredCube(props) {
 
 }
 
-function ContentCube(props) {
+function ContentSphere(props) {
     const mesh = useRef()
 
     return (
         <mesh
             {...props}
             ref={mesh}>
-            <sphereBufferGeometry args={[1, 32, 32]} />
+            <sphereBufferGeometry args={[.5, 32, 32]} />
             <meshStandardMaterial color="#fffc96" />
         </mesh>
     )
@@ -661,12 +661,12 @@ const Rendering = ({array}) => {
                 negativeX = startPosition;
             }
         } else if (nonzero_emotions[0].emotion == "Content") {
-            renderedObjects.push( <ContentCube position={[positiveX, positiveY, 0]} />);
-            positiveIndex++;
-            positiveX += 1;
-            if (positiveIndex == maxShapes) {
-                positiveY += 1;
-                positiveX = startPosition;
+            renderedObjects.push( <ContentSphere position={[positiveXSphere, positiveYSphere, 0]} />);
+            spherePositiveIndex++;
+            positiveSphereX += 1.5;
+            if (spherePositiveIndex == maxSphere) {
+                positiveYSphere += 1.5;
+                positiveXSphere = startPosition;
             }
         } else if (nonzero_emotions[0].emotion == "Celebration") {
             renderedObjects.push( <CelebrationCube position={[positiveX, positiveY, 0]} />);
