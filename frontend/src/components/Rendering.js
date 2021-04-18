@@ -129,7 +129,7 @@ function HappinessSphere(props) {
 function ConfidenceCube(props) {
     const mesh = useRef()
 
-    let rand = (Math.random() * 10.0) + 0.01;
+    const rand = (Math.random() * 10.0) + 0.01;
 
     useFrame(() => {
         mesh.current.rotation.x = mesh.current.rotation.y = rand
@@ -666,7 +666,7 @@ const Rendering = ({array}) => {
 
     let startPosition = -5;
     let maxShapes = 10;
-    let maxSphere = 5;
+    let maxSphere = 7;
     let maxZ = 3;
 
     let negativeXSphere = startPosition;
@@ -705,7 +705,7 @@ const Rendering = ({array}) => {
                 spherePosZIndex++;
                 positiveZSphere++;
                 positiveXSphere = startPosition;
-                if (spherePosZIndex == 3) {
+                if (spherePosZIndex == maxZ) {
                     positiveZSphere = -1;
                     spherePosZIndex = -1;
                     positiveYSphere += 1.5;
@@ -720,7 +720,7 @@ const Rendering = ({array}) => {
                 negZIndex++;
                 negativeZ++;
                 negativeX = startPosition;
-                if (negZIndex == 3) {
+                if (negZIndex == maxZ) {
                     negativeZ = -1;
                     negZIndex = 0;
                     negativeY -= 1;
@@ -735,7 +735,7 @@ const Rendering = ({array}) => {
                 spherePosZIndex++;
                 positiveZSphere++;
                 positiveXSphere = startPosition;
-                if (spherePosZIndex == 3) {
+                if (spherePosZIndex == maxZ) {
                     positiveZSphere = -1;
                     spherePosZIndex = 0;
                     positiveYSphere += 1.5;
@@ -750,7 +750,7 @@ const Rendering = ({array}) => {
                 sphereNegZIndex++;
                 negativeZSphere++;
                 negativeXSphere = startPosition;
-                if (sphereNegZIndex == 3) {
+                if (sphereNegZIndex == maxZ) {
                     negativeZSphere = -1;
                     sphereNegZIndex = 0;
                     negativeYSphere += 1.5;
@@ -765,7 +765,7 @@ const Rendering = ({array}) => {
                 spherePosZIndex++;
                 positiveZSphere++;
                 positiveXSphere = startPosition;
-                if (spherePosZIndex == 3) {
+                if (spherePosZIndex == maxZ) {
                     positiveZSphere = -1;
                     spherePosZIndex = 0;
                     positiveYSphere += 1.5;
@@ -780,7 +780,7 @@ const Rendering = ({array}) => {
                 posZIndex++;
                 positiveZ++;
                 positiveX = startPosition;
-                if (posZIndex == 3) {
+                if (posZIndex == maxZ) {
                     positiveZ = -1;
                     posZIndex = 0;
                     positiveY += 1;
@@ -795,7 +795,7 @@ const Rendering = ({array}) => {
                 spherePosZIndex++;
                 positiveZSphere++;
                 positiveXSphere = startPosition;
-                if (spherePosZIndex == 3) {
+                if (spherePosZIndex == maxZ) {
                     positiveZSphere = -1;
                     spherePosZIndex = 0;
                     positiveYSphere += 1.5;
@@ -810,7 +810,7 @@ const Rendering = ({array}) => {
                 posZIndex++;
                 positiveZ++;
                 positiveX = startPosition;
-                if (posZIndex == 3) {
+                if (posZIndex == maxZ) {
                     positiveZ = -1;
                     posZIndex = 0;
                     positiveY += 1;
@@ -825,7 +825,7 @@ const Rendering = ({array}) => {
                 spherePosZIndex++;
                 positiveZSphere++;
                 positiveXSphere = startPosition;
-                if (spherePosZIndex == 3) {
+                if (spherePosZIndex == maxZ) {
                     positiveZSphere = -1;
                     spherePosZIndex = 0;
                     positiveYSphere += 1.5;
@@ -840,7 +840,7 @@ const Rendering = ({array}) => {
                 spherePosZIndex++;
                 positiveZSphere++;
                 positiveXSphere = startPosition;
-                if (spherePosZIndex == 3) {
+                if (spherePosZIndex == maxZ) {
                     positiveZSphere = -1;
                     spherePosZIndex = 0;
                     positiveYSphere += 1.5;
@@ -855,7 +855,7 @@ const Rendering = ({array}) => {
                 sphereNegZIndex++;
                 negativeZSphere++;
                 negativeXSphere = startPosition;
-                if (sphereNegZIndex == 3) {
+                if (sphereNegZIndex == maxZ) {
                     negativeZSphere = -1;
                     sphereNegZIndex = 0;
                     negativeYSphere += 1.5;
@@ -870,7 +870,7 @@ const Rendering = ({array}) => {
                 negZIndex++;
                 negativeZ++;
                 negativeX = startPosition;
-                if (negZIndex == 3) {
+                if (negZIndex == maxZ) {
                     negativeZ = -1;
                     negZIndex = 0;
                     negativeY -= 1;
@@ -885,7 +885,7 @@ const Rendering = ({array}) => {
                 spherePosZIndex++;
                 positiveZSphere++;
                 positiveXSphere = startPosition;
-                if (spherePosZIndex == 3) {
+                if (spherePosZIndex == maxZ) {
                     positiveZSphere = -1;
                     spherePosZIndex = 0;
                     positiveYSphere += 1.5;
@@ -900,7 +900,7 @@ const Rendering = ({array}) => {
                 posZIndex++;
                 positiveZ++;
                 positiveX = startPosition;
-                if (posZIndex == 3) {
+                if (posZIndex == maxZ) {
                     positiveZ = -1;
                     posZIndex = 0;
                     positiveY += 1;
@@ -915,7 +915,7 @@ const Rendering = ({array}) => {
                 sphereNegZIndex++;
                 negativeZSphere++;
                 negativeXSphere = startPosition;
-                if (sphereNegZIndex == 3) {
+                if (sphereNegZIndex == maxZ) {
                     negativeZSphere = -1;
                     sphereNegZIndex = 0;
                     negativeYSphere += 1.5;
@@ -930,7 +930,7 @@ const Rendering = ({array}) => {
                 negZIndex++;
                 negativeZ++;
                 negativeX = startPosition;
-                if (negZIndex == 3) {
+                if (negZIndex == maxZ) {
                     negativeZ = -1;
                     negZIndex = 0;
                     negativeY -= 1;
@@ -945,7 +945,7 @@ const Rendering = ({array}) => {
                 spherePosZIndex++;
                 positiveZSphere++;
                 positiveXSphere = startPosition;
-                if (spherePosZIndex == 3) {
+                if (spherePosZIndex == maxZ) {
                     positiveZSphere = -1;
                     spherePosZIndex = 0;
                     positiveYSphere += 1.5;
@@ -960,7 +960,7 @@ const Rendering = ({array}) => {
                 negZIndex++;
                 negativeZ++;
                 negativeX = startPosition;
-                if (negZIndex == 3) {
+                if (negZIndex == maxZ) {
                     negativeZ = -1;
                     negZIndex = 0;
                     negativeY -= 1;
@@ -975,7 +975,7 @@ const Rendering = ({array}) => {
                 spherePosZIndex++;
                 positiveZSphere++;
                 positiveXSphere = startPosition;
-                if (spherePosZIndex == 3) {
+                if (spherePosZIndex == maxZ) {
                     positiveZSphere = -1;
                     spherePosZIndex = 0;
                     positiveYSphere += 1.5;
@@ -990,7 +990,7 @@ const Rendering = ({array}) => {
                 negZIndex++;
                 negativeZ++;
                 negativeX = startPosition;
-                if (negZIndex == 3) {
+                if (negZIndex == maxZ) {
                     negativeZ = -1;
                     negZIndex = 0;
                     negativeY -= 1;
@@ -1005,7 +1005,7 @@ const Rendering = ({array}) => {
                 sphereNegZIndex++;
                 negativeZSphere++;
                 negativeXSphere = startPosition;
-                if (sphereNegZIndex == 3) {
+                if (sphereNegZIndex == maxZ) {
                     negativeZSphere = -1;
                     sphereNegZIndex = 0;
                     negativeYSphere += 1.5;
@@ -1020,7 +1020,7 @@ const Rendering = ({array}) => {
                 negZIndex++;
                 negativeZ++;
                 negativeX = startPosition;
-                if (negZIndex == 3) {
+                if (negZIndex == maxZ) {
                     negativeZ = -1;
                     negZIndex = 0;
                     negativeY -= 1;
@@ -1035,7 +1035,7 @@ const Rendering = ({array}) => {
                 negZIndex++;
                 negativeZ++;
                 negativeX = startPosition;
-                if (negZIndex == 3) {
+                if (negZIndex == maxZ) {
                     negativeZ = -1;
                     negZIndex = 0;
                     negativeY -= 1;
@@ -1050,7 +1050,7 @@ const Rendering = ({array}) => {
                 spherePosZIndex++;
                 positiveZSphere++;
                 positiveXSphere = startPosition;
-                if (spherePosZIndex == 3) {
+                if (spherePosZIndex == maxZ) {
                     positiveZSphere = -1;
                     spherePosZIndex = 0;
                     positiveYSphere += 1.5;
@@ -1065,7 +1065,7 @@ const Rendering = ({array}) => {
                 negZIndex++;
                 negativeZ++;
                 negativeX = startPosition;
-                if (negZIndex == 3) {
+                if (negZIndex == maxZ) {
                     negativeZ = -1;
                     negZIndex = 0;
                     negativeY -= 1;
@@ -1080,7 +1080,7 @@ const Rendering = ({array}) => {
                 negZIndex++;
                 negativeZ++;
                 negativeX = startPosition;
-                if (negZIndex == 3) {
+                if (negZIndex == maxZ) {
                     negativeZ = -1;
                     negZIndex = 0;
                     negativeY -= 1;
@@ -1095,7 +1095,7 @@ const Rendering = ({array}) => {
                 posZIndex++;
                 positiveZ++;
                 positiveX = startPosition;
-                if (posZIndex == 3) {
+                if (posZIndex == maxZ) {
                     positiveZ = -1;
                     posZIndex = 0;
                     positiveY += 1;
@@ -1110,7 +1110,7 @@ const Rendering = ({array}) => {
                 negZIndex++;
                 negativeZ++;
                 negativeX = startPosition;
-                if (negZIndex == 3) {
+                if (negZIndex == maxZ) {
                     negativeZ = -1;
                     negZIndex = 0;
                     negativeY -= 1;
@@ -1125,7 +1125,7 @@ const Rendering = ({array}) => {
                 negZIndex++;
                 negativeZ++;
                 negativeX = startPosition;
-                if (negZIndex == 3) {
+                if (negZIndex == maxZ) {
                     negativeZ = -1;
                     negZIndex = 0;
                     negativeY -= 1;
@@ -1140,7 +1140,7 @@ const Rendering = ({array}) => {
                 negZIndex++;
                 negativeZ++;
                 negativeX = startPosition;
-                if (negZIndex == 3) {
+                if (negZIndex == maxZ) {
                     negativeZ = -1;
                     negZIndex = 0;
                     negativeY -= 1;
@@ -1155,7 +1155,7 @@ const Rendering = ({array}) => {
                 sphereNegZIndex++;
                 negativeZSphere++;
                 negativeXSphere = startPosition;
-                if (sphereNegZIndex == 3) {
+                if (sphereNegZIndex == maxZ) {
                     negativeZSphere = -1;
                     sphereNegZIndex = 0;
                     negativeYSphere += 1.5;
@@ -1170,7 +1170,7 @@ const Rendering = ({array}) => {
                 posZIndex++;
                 positiveZ++;
                 positiveX = startPosition;
-                if (posZIndex == 3) {
+                if (posZIndex == maxZ) {
                     positiveZ = -1;
                     posZIndex = 0;
                     positiveY += 1;
@@ -1185,7 +1185,7 @@ const Rendering = ({array}) => {
                 negZIndex++;
                 negativeZ++;
                 negativeX = startPosition;
-                if (negZIndex == 3) {
+                if (negZIndex == maxZ) {
                     negativeZ = -1;
                     negZIndex = 0;
                     negativeY -= 1;
@@ -1200,7 +1200,7 @@ const Rendering = ({array}) => {
                 posZIndex++;
                 positiveZ++;
                 positiveX = startPosition;
-                if (posZIndex == 3) {
+                if (posZIndex == maxZ) {
                     positiveZ = -1;
                     posZIndex = 0;
                     positiveY += 1;
@@ -1215,7 +1215,7 @@ const Rendering = ({array}) => {
                 negZIndex++;
                 negativeZ++;
                 negativeX = startPosition;
-                if (negZIndex == 3) {
+                if (negZIndex == maxZ) {
                     negativeZ = -1;
                     negZIndex = 0;
                     negativeY -= 1;
@@ -1230,7 +1230,7 @@ const Rendering = ({array}) => {
                 spherePosZIndex++;
                 positiveZSphere++;
                 positiveXSphere = startPosition;
-                if (spherePosZIndex == 3) {
+                if (spherePosZIndex == maxZ) {
                     positiveZSphere = -1;
                     spherePosZIndex = 0;
                     positiveYSphere += 1.5;
