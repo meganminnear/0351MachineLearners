@@ -36,7 +36,7 @@ function DiscontentmentTriangle(props) {
 
     return (
         <mesh
-            rotation={[(Math.random() * 1), (Math.random() * 1), (Math.random() * 1)]}
+            rotation={[(Math.random() * 1) - 1, (Math.random() * 1) - 1, (Math.random() * 1) - 1]}
             {...props}
             ref={mesh}>
             <tetrahedronBufferGeometry args={[1]} />
@@ -94,7 +94,7 @@ function ApprovalCube(props) {
 
   return (
         <mesh
-        rotation={[(Math.random() * 1), (Math.random() * 1), (Math.random() * 1)]}
+        rotation={[(Math.random() * 1) - 1, (Math.random() * 1) - 1, (Math.random() * 1) - 1]}
         {...props}
         ref={mesh}>
         <boxBufferGeometry args={[1, 1, 1]} />
@@ -122,7 +122,7 @@ function ConfidenceCube(props) {
 
     return (
         <mesh
-            rotation={[(Math.random() * 1), (Math.random() * 1), (Math.random() * 1)]}
+            rotation={[(Math.random() * 1) - 1, (Math.random() * 1) - 1, (Math.random() * 1) - 1]}
             {...props}
             ref={mesh}>
             <boxBufferGeometry args={[1, 1, 1]} />
@@ -179,7 +179,7 @@ function BoredCube(props) {
 
     return (
         <mesh
-            rotation={[(Math.random() * 1), (Math.random() * 1), (Math.random() * 1)]}
+            rotation={[(Math.random() * 1) - 1, (Math.random() * 1) - 1, (Math.random() * 1) - 1]}
             {...props}
             ref={mesh}>
             <boxBufferGeometry args={[1, 1, 1]} />
@@ -208,7 +208,7 @@ function CelebrationCube(props) {
 
     return (
         <mesh
-            rotation={[(Math.random() * 1), (Math.random() * 1), (Math.random() * 1)]}
+            rotation={[(Math.random() * 1) - 1, (Math.random() * 1) - 1, (Math.random() * 1) - 1]}
             {...props}
             ref={mesh}>
             <boxBufferGeometry args={[1, 1, 1]} />
@@ -237,7 +237,7 @@ function NervousCone(props) {
 
     return (
         <mesh
-            rotation={[(Math.random() * 1), (Math.random() * 1), (Math.random() * 1)]}
+            rotation={[(Math.random() * 1) - 1, (Math.random() * 1) - 1, (Math.random() * 1) - 1]}
             {...props}
             ref={mesh}>
             <coneBufferGeometry args={[0.5, -2, 20, 32]} />
@@ -266,7 +266,7 @@ function ConfusedCube(props) {
 
     return (
         <mesh
-            rotation={[(Math.random() * 1), (Math.random() * 1), (Math.random() * 1)]}
+            rotation={[(Math.random() * 1) - 1, (Math.random() * 1) - 1, (Math.random() * 1) - 1]}
             {...props}
             ref={mesh}>
             <boxBufferGeometry args={[1, 1, 1]} />
@@ -296,7 +296,7 @@ function DisappointedTriangle(props) {
 
     return (
         <mesh
-            rotation={[(Math.random() * 1), (Math.random() * 1), (Math.random() * 1)]}
+            rotation={[(Math.random() * 1) - 1, (Math.random() * 1) - 1, (Math.random() * 1) - 1]}
             {...props}
             ref={mesh}>
             <tetrahedronBufferGeometry args={[1]} />
@@ -325,7 +325,7 @@ function FrustratedTriangle(props) {
 
     return (
         <mesh
-            rotation={[(Math.random() * 1), (Math.random() * 1), (Math.random() * 1)]}
+            rotation={[(Math.random() * 1) - 1, (Math.random() * 1) - 1, (Math.random() * 1) - 1]}
             {...props}
             ref={mesh}>
             <tetrahedronBufferGeometry args={[1]} />
@@ -340,7 +340,7 @@ function AngerTriangle(props) {
 
     return (
         <mesh
-            rotation={[(Math.random() * 1), (Math.random() * 1), (Math.random() * 1)]}
+            rotation={[(Math.random() * 1) - 1, (Math.random() * 1) - 1, (Math.random() * 1) - 1]}
             {...props}
             ref={mesh}>
             <tetrahedronBufferGeometry args={[1]} />
@@ -369,7 +369,7 @@ function IrritatedCone(props) {
 
     return (
         <mesh
-            rotation={[(Math.random() * 1), (Math.random() * 1), (Math.random() * 1)]}
+            rotation={[(Math.random() * 1) - 1, (Math.random() * 1) - 1, (Math.random() * 1) - 1]}
             {...props}
             ref={mesh}>
             <coneBufferGeometry args={[0.5, -2, 20, 32]} />
@@ -384,7 +384,7 @@ function SickCone(props) {
 
     return (
         <mesh
-            rotation={[(Math.random() * 1), (Math.random() * 1), (Math.random() * 1)]}
+            rotation={[(Math.random() * 1) - 1, (Math.random() * 1) - 1, (Math.random() * 1) - 1]}
             {...props}
             ref={mesh}>
             <coneBufferGeometry args={[0.5, -2, 20, 32]} />
@@ -399,7 +399,7 @@ function CuriosityCylinder(props) {
 
     return (
         <mesh
-            rotation={[(Math.random() * 1), (Math.random() * 1), (Math.random() * 1)]}
+            rotation={[(Math.random() * 1) - 1, (Math.random() * 1) - 1, (Math.random() * 1) - 1]}
             {...props}
             ref={mesh}>
             <cylinderBufferGeometry args={[.5, .5, 1, 20, 32]} />
@@ -414,7 +414,7 @@ function ViolentCone(props) {
 
     return (
         <mesh
-            rotation={[(Math.random() * 1), (Math.random() * 1), (Math.random() * 1)]}
+            rotation={[(Math.random() * 1) - 1, (Math.random() * 1) - 1, (Math.random() * 1) - 1]}
             {...props}
             ref={mesh}>
             <coneBufferGeometry args={[0.5, -2, 20, 32]} />
@@ -429,7 +429,7 @@ function EvilTriangle(props) {
 
     return (
         <mesh
-            rotation={[(Math.random() * 1), (Math.random() * 1), (Math.random() * 1)]}
+            rotation={[(Math.random() * 1) - 1, (Math.random() * 1) - 1, (Math.random() * 1) - 1]}
             {...props}
             ref={mesh}>
             <tetrahedronBufferGeometry args={[1]} />
@@ -444,7 +444,7 @@ function StressedCube(props) {
 
     return (
         <mesh
-            rotation={[(Math.random() * 1), (Math.random() * 1), (Math.random() * 1)]}
+            rotation={[(Math.random() * 1) - 1, (Math.random() * 1) - 1, (Math.random() * 1) - 1]}
             {...props}
             ref={mesh}>
             <boxBufferGeometry args={[1, 1, 1]} />
@@ -473,7 +473,7 @@ function SurprisedCube(props) {
 
     return (
         <mesh
-            rotation={[(Math.random() * 1), (Math.random() * 1), (Math.random() * 1)]}
+            rotation={[(Math.random() * 1) - 1, (Math.random() * 1) - 1, (Math.random() * 1) - 1]}
             {...props}
             ref={mesh}>
             <boxBufferGeometry args={[1, 1, 1]} />
@@ -488,7 +488,7 @@ function GuardedCube(props) {
 
     return (
         <mesh
-            rotation={[(Math.random() * 1), (Math.random() * 1), (Math.random() * 1)]}
+            rotation={[(Math.random() * 1) - 1, (Math.random() * 1) - 1, (Math.random() * 1) - 1]}
             {...props}
             ref={mesh}>
             <boxBufferGeometry args={[1, 1, 1]} />
@@ -503,7 +503,7 @@ function StrongCone(props) {
 
     return (
         <mesh
-            rotation={[(Math.random() * 1), (Math.random() * 1), (Math.random() * 1)]}
+            rotation={[(Math.random() * 1) - 1, (Math.random() * 1) - 1, (Math.random() * 1) - 1]}
             {...props}
             ref={mesh}>
             <coneBufferGeometry args={[0.5, 2, 20, 32]} />
@@ -518,7 +518,7 @@ function ScaredCone(props) {
 
     return (
         <mesh
-            rotation={[(Math.random() * 1), (Math.random() * 1), (Math.random() * 1)]}
+            rotation={[(Math.random() * 1) - 1, (Math.random() * 1) - 1, (Math.random() * 1) - 1]}
             {...props}
             ref={mesh}>
             <coneBufferGeometry args={[0.2, -3, 20, 32]} />
