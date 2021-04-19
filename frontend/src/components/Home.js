@@ -228,7 +228,6 @@ class Home extends React.Component {
               */}
 
                 <Button className="mx-2" id="green" variant="primary" onClick={this.clearText}>clear</Button>
-                <Button className="mx-2" id="green" variant="primary">undo</Button>
                 <p id="subtitle">when you enter your writing, it gets analyzed by our algorithm in order to draw an image!</p>
               </div>
               <div className="col-6 px-3">
