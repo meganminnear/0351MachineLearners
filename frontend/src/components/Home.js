@@ -89,7 +89,8 @@ class Home extends React.Component {
         console.log("Response:");
         console.log(res);
         //console.log(res.x_values);
-        this.setState({diagramData: {sentiments: res.x_values.sentiments, movingAverage: res.x_values.movingAverage}})
+        this.setState({diagramData: {sentiments: [0].concat(res.x_values.sentiments), movingAverage: [0].concat(res.x_values.movingAverage)}})
+
         this.setState({tokens: res.tokens})
         //console.log("tokens: " + this.state.tokens)
       })
@@ -235,7 +236,7 @@ class Home extends React.Component {
                   <Tab eventKey="linear" title="linear">
                     <div id="chartID">
                       <VictoryChart theme={VictoryTheme.material}>
-                        <VictoryLegend orientation = {"horizontal"} x={100} y={20} data = {[
+                        <VictoryLegend orientation = {"horizontal"} x={100}  data = {[
                           {name: "Sentiment", symbol: {fill:"black"}},
                           {name: "Running Average", symbol: {fill:"red"}}]}/>
                         <VictoryLine data={this.state.diagramData.sentiments}/>
