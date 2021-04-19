@@ -23,6 +23,7 @@ import { VictoryChart, VictoryTheme, VictoryLine, VictoryLegend } from "victory"
 import Rendering from './Rendering';
 
 import Download from './Download';
+import MainTextArea from './MainTextArea';
 
 class Home extends React.Component {
   constructor(props) {
@@ -34,12 +35,12 @@ class Home extends React.Component {
       show3DImageDownloadModal : false,
       showShareModal : false,
       typingTimer : null,
-      input_string : "",
+      // input_string : "",
       diagramData : {sentiments: [], movingAverage: []},
       tokens : []
     };
 
-    this.textUpdate = this.textUpdate.bind(this);
+    // this.textUpdate = this.textUpdate.bind(this);
     this.clearText = this.clearText.bind(this);
     this.open2DImageDownloadModal = this.open2DImageDownloadModal.bind(this);
     this.close2DImageDownloadModal = this.close2DImageDownloadModal.bind(this);
@@ -53,18 +54,28 @@ class Home extends React.Component {
     this.saveChart = this.saveChart.bind(this);
     this.callServer = this.callServer.bind(this);
     this.triggerDownload = this.triggerDownload.bind(this);
+    this.mainTextAreaRef = React.createRef();
+    // this.updateInputString = this.updateInputString.bind(this);
   }
 
-  textUpdate(event) {
-    clearTimeout(this.state.typingTimer);
-    if (event.target.value) {
-      this.setState({input_string: event.target.value, typingTimer: setTimeout(this.callServer, 1000)});
-    }
-  }
+  // updateInputString(newInputString) {
+  //   console.log("pogu");
+  //   this.setState({input_string: newInputString});
+  //   this.callServer();
+  // }
+
+  // textUpdate(event) {
+  //   clearTimeout(this.state.typingTimer);
+  //   if (event.target.value) {
+  //     this.setState({input_string: event.target.value, typingTimer: setTimeout(this.callServer, 1000)});
+  //   }
+  // }
 
   callServer() {
     //this.setState({diagramData: [{x: 1, y: Math.floor(Math.random() * 10)}, {x: 2, y: Math.floor(Math.random() * 10)}, {x: 3, y: Math.floor(Math.random() * 10)}]});
-    console.log("Sent to server: " + this.state.input_string);
+    const input_string = this.mainTextAreaRef.current.state.inputString;
+
+    console.log("Sent to server: " + input_string);
     fetch("http://208.87.134.10/api/emotions", {
       method: "POST",
       credentials: 'same-origin',
@@ -72,7 +83,7 @@ class Home extends React.Component {
         'Content-Type': 'application/json',
         Accept: 'application/json'
       },
-      body: JSON.stringify({"text": this.state.input_string})})
+      body: JSON.stringify({"text": input_string})})
     .then(response => {
       response.json().then(res => {
         console.log("Response:");
@@ -181,9 +192,12 @@ class Home extends React.Component {
   }
 
   clearText() {
-    this.setState({tokens: [], diagramData: {sentiments: [], movingAverage: []}, input_string: ""});
+    this.setState({tokens: [], diagramData: {sentiments: [], movingAverage: []}
+      // , input_string: ""
+    });
     //this.refs.abstractImage.src = emptyImage;
-    this.refs.mainTextArea.value = "";
+    // this.refs.mainTextArea.value = "";
+    this.mainTextAreaRef.current.clearValue();
   }
 
   render() {
@@ -193,11 +207,16 @@ class Home extends React.Component {
           <div className="pt-3 col-lg-10">
             <div className="row py-3 ml-0 mr-0">
               <div className="col-6 px-1 py-5">
+
+                <MainTextArea handler={this.callServer} ref={this.mainTextAreaRef} />
+              {/*
                 <Form>
                   <Form.Group controlId="exampleForm.ControlTextarea1">
                     <Form.Control as="textarea" rows={10} onChange={event => this.textUpdate(event)} placeholder="enter text here" ref="mainTextArea" />
                   </Form.Group>
                 </Form>
+              */}
+
                 <Button className="mx-2" id="green" variant="primary" onClick={this.clearText}>clear</Button>
                 <Button className="mx-2" id="green" variant="primary">undo</Button>
                 <p id="subtitle">when you enter your writing, it gets analyzed by our algorithm in order to draw an image!</p>
