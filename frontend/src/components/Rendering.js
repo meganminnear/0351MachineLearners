@@ -598,541 +598,541 @@ class Rendering extends React.Component {
             //console.log(nonzero_emotions);
             //console.log(nonzero_emotions[0].emotion);
             //let stripped_emotions = emotions.filter(({entry}) => entry != 0)
-            if (nonzero_emotions[0].emotion == "Mirth") {
+            if (nonzero_emotions[0].emotion === "Mirth") {
                 this.renderedObjects.push( <MirthSphere position={[(Math.random() * (positiveXSphere + 1)) + positiveXSphere, (Math.random() * (positiveYSphere + 1)) + positiveYSphere, (Math.random() * (positiveZSphere + 1)) + positiveZSphere]} />);
                 spherePositiveIndex++;
                 positiveXSphere += 1.5;
-                if (spherePositiveIndex == maxSphere) {
+                if (spherePositiveIndex === maxSphere) {
                     spherePositiveIndex = 0;
                     spherePosZIndex++;
                     positiveZSphere++;
                     positiveXSphere = startPosition;
-                    if (spherePosZIndex == maxZ) {
+                    if (spherePosZIndex === maxZ) {
                         positiveZSphere = -1;
                         spherePosZIndex = -1;
                         positiveYSphere += 1.5;
                     }
                 }
-            } else if (nonzero_emotions[0].emotion == "Discontentment") {
+            } else if (nonzero_emotions[0].emotion === "Discontentment") {
                 this.renderedObjects.push( <DiscontentmentTriangle position={[negativeX, negativeY, negativeZ]} />);
                 negativeIndex++;
                 negativeX += 1;
-                if (negativeIndex == maxShapes) {
+                if (negativeIndex === maxShapes) {
                     negativeIndex = 0;
                     negZIndex++;
                     negativeZ++;
                     negativeX = startPosition;
-                    if (negZIndex == maxZ) {
+                    if (negZIndex === maxZ) {
                         negativeZ = -1;
                         negZIndex = 0;
                         negativeY -= 1;
                     }
                 }
-            } else if (nonzero_emotions[0].emotion == "Pleasure") {
+            } else if (nonzero_emotions[0].emotion === "Pleasure") {
                 this.renderedObjects.push( <PleasureSphere position={[(Math.random() * (positiveXSphere + 1)) + positiveXSphere, (Math.random() * (positiveYSphere + 1)) + positiveYSphere, (Math.random() * (positiveZSphere + 1)) + positiveZSphere]} />);
                 spherePositiveIndex++;
                 positiveXSphere += 1.5;
-                if (spherePositiveIndex == maxSphere) {
+                if (spherePositiveIndex === maxSphere) {
                     spherePositiveIndex = 0;
                     spherePosZIndex++;
                     positiveZSphere++;
                     positiveXSphere = startPosition;
-                    if (spherePosZIndex == maxZ) {
+                    if (spherePosZIndex === maxZ) {
                         positiveZSphere = -1;
                         spherePosZIndex = 0;
                         positiveYSphere += 1.5;
                     }
                 }
-            } else if (nonzero_emotions[0].emotion == "Sadness") {
+            } else if (nonzero_emotions[0].emotion === "Sadness") {
                 this.renderedObjects.push( <SadnessSphere position={[(Math.random() * (negativeXSphere + 1)) + negativeXSphere, (Math.random() * (negativeYSphere + 1)) + negativeYSphere, (Math.random() * (negativeZSphere + 1)) + negativeZSphere]} />);
                 sphereNegativeIndex++;
                 negativeXSphere += 1.5;
-                if (sphereNegativeIndex == maxSphere) {
+                if (sphereNegativeIndex === maxSphere) {
                     sphereNegativeIndex = 0;
                     sphereNegZIndex++;
                     negativeZSphere++;
                     negativeXSphere = startPosition;
-                    if (sphereNegZIndex == maxZ) {
+                    if (sphereNegZIndex === maxZ) {
                         negativeZSphere = -1;
                         sphereNegZIndex = 0;
                         negativeYSphere += 1.5;
                     }
                 }
-            } else if (nonzero_emotions[0].emotion == "Love") {
+            } else if (nonzero_emotions[0].emotion === "Love") {
                 this.renderedObjects.push( <LoveSphere position={[(Math.random() * (positiveXSphere + 1)) + positiveXSphere, (Math.random() * (positiveYSphere + 1)) + positiveYSphere, (Math.random() * (positiveZSphere + 1)) + positiveZSphere]} />);
                 spherePositiveIndex++;
                 positiveXSphere += 1.5;
-                if (spherePositiveIndex == maxSphere) {
+                if (spherePositiveIndex === maxSphere) {
                     spherePositiveIndex = 0;
                     spherePosZIndex++;
                     positiveZSphere++;
                     positiveXSphere = startPosition;
-                    if (spherePosZIndex == maxZ) {
+                    if (spherePosZIndex === maxZ) {
                         positiveZSphere = -1;
                         spherePosZIndex = 0;
                         positiveYSphere += 1.5;
                     }
                 }
-            } else if (nonzero_emotions[0].emotion == "Approval") {
+            } else if (nonzero_emotions[0].emotion === "Approval") {
                 this.renderedObjects.push( <ApprovalCube position={[positiveX, positiveY, positiveZ]} />);
                 positiveIndex++;
                 positiveX += 1;
-                if (positiveIndex == maxShapes) {
+                if (positiveIndex === maxShapes) {
                     positiveIndex = 0;
                     posZIndex++;
                     positiveZ++;
                     positiveX = startPosition;
-                    if (posZIndex == maxZ) {
+                    if (posZIndex === maxZ) {
                         positiveZ = -1;
                         posZIndex = 0;
                         positiveY += 1;
                     }
                 }
-            } else if (nonzero_emotions[0].emotion == "Happiness") {
+            } else if (nonzero_emotions[0].emotion === "Happiness") {
                 this.renderedObjects.push( <HappinessSphere position={[(Math.random() * (positiveXSphere + 1)) + positiveXSphere, (Math.random() * (positiveYSphere + 1)) + positiveYSphere, (Math.random() * (positiveZSphere + 1)) + positiveZSphere]} />);
                 spherePositiveIndex++;
                 positiveXSphere += 1.5;
-                if (spherePositiveIndex == maxSphere) {
+                if (spherePositiveIndex === maxSphere) {
                     spherePositiveIndex = 0;
                     spherePosZIndex++;
                     positiveZSphere++;
                     positiveXSphere = startPosition;
-                    if (spherePosZIndex == maxZ) {
+                    if (spherePosZIndex === maxZ) {
                         positiveZSphere = -1;
                         spherePosZIndex = 0;
                         positiveYSphere += 1.5;
                     }
                 }
-            } else if (nonzero_emotions[0].emotion == "Confidence") {
+            } else if (nonzero_emotions[0].emotion === "Confidence") {
                 this.renderedObjects.push( <ConfidenceCube position={[positiveX, positiveY, positiveZ]} />);
                 positiveIndex++;
                 positiveX += 1;
-                if (positiveIndex == maxShapes) {
+                if (positiveIndex === maxShapes) {
                     positiveIndex = 0;
                     posZIndex++;
                     positiveZ++;
                     positiveX = startPosition;
-                    if (posZIndex == maxZ) {
+                    if (posZIndex === maxZ) {
                         positiveZ = -1;
                         posZIndex = 0;
                         positiveY += 1;
                     }
                 }
-            } else if (nonzero_emotions[0].emotion == "Giddy") {
+            } else if (nonzero_emotions[0].emotion === "Giddy") {
                 this.renderedObjects.push( <GiddySphere position={[(Math.random() * (positiveXSphere + 1)) + positiveXSphere, (Math.random() * (positiveYSphere + 1)) + positiveYSphere, (Math.random() * (positiveZSphere + 1)) + positiveZSphere]} />);
                 spherePositiveIndex++;
                 positiveXSphere += 1.5;
-                if (spherePositiveIndex == maxSphere) {
+                if (spherePositiveIndex === maxSphere) {
                     spherePositiveIndex = 0;
                     spherePosZIndex++;
                     positiveZSphere++;
                     positiveXSphere = startPosition;
-                    if (spherePosZIndex == maxZ) {
+                    if (spherePosZIndex === maxZ) {
                         positiveZSphere = -1;
                         spherePosZIndex = 0;
                         positiveYSphere += 1.5;
                     }
                 }
-            } else if (nonzero_emotions[0].emotion == "Joy") {
+            } else if (nonzero_emotions[0].emotion === "Joy") {
                 this.renderedObjects.push( <JoySphere position={[(Math.random() * (positiveXSphere + 1)) + positiveXSphere, (Math.random() * (positiveYSphere + 1)) + positiveYSphere, (Math.random() * (positiveZSphere + 1)) + positiveZSphere]} />);
                 spherePositiveIndex++;
                 positiveXSphere += 1.5;
-                if (spherePositiveIndex == maxSphere) {
+                if (spherePositiveIndex === maxSphere) {
                     spherePositiveIndex = 0;
                     spherePosZIndex++;
                     positiveZSphere++;
                     positiveXSphere = startPosition;
-                    if (spherePosZIndex == maxZ) {
+                    if (spherePosZIndex === maxZ) {
                         positiveZSphere = -1;
                         spherePosZIndex = 0;
                         positiveYSphere += 1.5;
                     }
                 }
-            } else if (nonzero_emotions[0].emotion == "Embarrassed") {
+            } else if (nonzero_emotions[0].emotion === "Embarrassed") {
                 this.renderedObjects.push( <EmbarrassedSphere position={[(Math.random() * (negativeXSphere + 1)) + negativeXSphere, (Math.random() * (negativeYSphere + 1)) + negativeYSphere, (Math.random() * (negativeZSphere + 1)) + negativeZSphere]} />);
                 sphereNegativeIndex++;
                 negativeXSphere += 1.5;
-                if (sphereNegativeIndex == maxSphere) {
+                if (sphereNegativeIndex === maxSphere) {
                     sphereNegativeIndex = 0;
                     sphereNegZIndex++;
                     negativeZSphere++;
                     negativeXSphere = startPosition;
-                    if (sphereNegZIndex == maxZ) {
+                    if (sphereNegZIndex === maxZ) {
                         negativeZSphere = -1;
                         sphereNegZIndex = 0;
                         negativeYSphere += 1.5;
                     }
                 }
-            } else if (nonzero_emotions[0].emotion == "Bored") {
+            } else if (nonzero_emotions[0].emotion === "Bored") {
                 this.renderedObjects.push( <BoredCube position={[negativeX, negativeY, negativeZ]} />);
                 negativeIndex++;
                 negativeX += 1;
-                if (negativeIndex == maxShapes) {
+                if (negativeIndex === maxShapes) {
                     negativeIndex = 0;
                     negZIndex++;
                     negativeZ++;
                     negativeX = startPosition;
-                    if (negZIndex == maxZ) {
+                    if (negZIndex === maxZ) {
                         negativeZ = -1;
                         negZIndex = 0;
                         negativeY -= 1;
                     }
                 }
-            } else if (nonzero_emotions[0].emotion == "Content") {
+            } else if (nonzero_emotions[0].emotion === "Content") {
                 this.renderedObjects.push( <ContentSphere position={[(Math.random() * (positiveXSphere + 1)) + positiveXSphere, (Math.random() * (positiveYSphere + 1)) + positiveYSphere, (Math.random() * (positiveZSphere + 1)) + positiveZSphere]} />);
                 spherePositiveIndex++;
                 positiveXSphere += 1.5;
-                if (spherePositiveIndex == maxSphere) {
+                if (spherePositiveIndex === maxSphere) {
                     spherePositiveIndex = 0;
                     spherePosZIndex++;
                     positiveZSphere++;
                     positiveXSphere = startPosition;
-                    if (spherePosZIndex == maxZ) {
+                    if (spherePosZIndex === maxZ) {
                         positiveZSphere = -1;
                         spherePosZIndex = 0;
                         positiveYSphere += 1.5;
                     }
                 }
-            } else if (nonzero_emotions[0].emotion == "Celebration") {
+            } else if (nonzero_emotions[0].emotion === "Celebration") {
                 this.renderedObjects.push( <CelebrationCube position={[positiveX, positiveY, positiveZ]} />);
                 positiveIndex++;
                 positiveX += 1;
-                if (positiveIndex == maxShapes) {
+                if (positiveIndex === maxShapes) {
                     positiveIndex = 0;
                     posZIndex++;
                     positiveZ++;
                     positiveX = startPosition;
-                    if (posZIndex == maxZ) {
+                    if (posZIndex === maxZ) {
                         positiveZ = -1;
                         posZIndex = 0;
                         positiveY += 1;
                     }
                 }
-            } else if (nonzero_emotions[0].emotion == "Hopeless") {
+            } else if (nonzero_emotions[0].emotion === "Hopeless") {
                 this.renderedObjects.push( <HopelessSphere position={[(Math.random() * (negativeXSphere + 1)) + negativeXSphere, (Math.random() * (negativeYSphere + 1)) + negativeYSphere, (Math.random() * (negativeZSphere + 1)) + negativeZSphere]} />);
                 sphereNegativeIndex++;
                 negativeXSphere += 1.5;
-                if (sphereNegativeIndex == maxSphere) {
+                if (sphereNegativeIndex === maxSphere) {
                     sphereNegativeIndex = 0;
                     sphereNegZIndex++;
                     negativeZSphere++;
                     negativeXSphere = startPosition;
-                    if (sphereNegZIndex == maxZ) {
+                    if (sphereNegZIndex === maxZ) {
                         negativeZSphere = -1;
                         sphereNegZIndex = 0;
                         negativeYSphere += 1.5;
                     }
                 }
-            } else if (nonzero_emotions[0].emotion == "Nervous") {
+            } else if (nonzero_emotions[0].emotion === "Nervous") {
                 this.renderedObjects.push( <NervousCone position={[negativeX, negativeY, negativeZ]} />);
                 negativeIndex++;
                 negativeX += 1;
-                if (negativeIndex == maxShapes) {
+                if (negativeIndex === maxShapes) {
                     negativeIndex = 0;
                     negZIndex++;
                     negativeZ++;
                     negativeX = startPosition;
-                    if (negZIndex == maxZ) {
+                    if (negZIndex === maxZ) {
                         negativeZ = -1;
                         negZIndex = 0;
                         negativeY -= 1;
                     }
                 }
-            } else if (nonzero_emotions[0].emotion == "Hope") {
+            } else if (nonzero_emotions[0].emotion === "Hope") {
                 this.renderedObjects.push( <HopeSphere position={[(Math.random() * (positiveXSphere + 1)) + positiveXSphere, (Math.random() * (positiveYSphere + 1)) + positiveYSphere, (Math.random() * (positiveZSphere + 1)) + positiveZSphere]} />);
                 spherePositiveIndex++;
                 positiveXSphere += 1.5;
-                if (spherePositiveIndex == maxSphere) {
+                if (spherePositiveIndex === maxSphere) {
                     spherePositiveIndex = 0;
                     spherePosZIndex++;
                     positiveZSphere++;
                     positiveXSphere = startPosition;
-                    if (spherePosZIndex == maxZ) {
+                    if (spherePosZIndex === maxZ) {
                         positiveZSphere = -1;
                         spherePosZIndex = 0;
                         positiveYSphere += 1.5;
                     }
                 }
-            } else if (nonzero_emotions[0].emotion == "Confused") {
+            } else if (nonzero_emotions[0].emotion === "Confused") {
                 this.renderedObjects.push( <ConfusedCube position={[negativeX, negativeY, negativeZ]} />);
                 negativeIndex++;
                 negativeX += 1;
-                if (negativeIndex == maxShapes) {
+                if (negativeIndex === maxShapes) {
                     negativeIndex = 0;
                     negZIndex++;
                     negativeZ++;
                     negativeX = startPosition;
-                    if (negZIndex == maxZ) {
+                    if (negZIndex === maxZ) {
                         negativeZ = -1;
                         negZIndex = 0;
                         negativeY -= 1;
                     }
                 }
-            } else if (nonzero_emotions[0].emotion == "Affectionate") {
+            } else if (nonzero_emotions[0].emotion === "Affectionate") {
                 this.renderedObjects.push( <AffectionateSphere position={[(Math.random() * (positiveXSphere + 1)) + positiveXSphere, (Math.random() * (positiveYSphere + 1)) + positiveYSphere, (Math.random() * (positiveZSphere + 1)) + positiveZSphere]} />);
                 spherePositiveIndex++;
                 positiveXSphere += 1.5;
-                if (spherePositiveIndex == maxSphere) {
+                if (spherePositiveIndex === maxSphere) {
                     spherePositiveIndex = 0;
                     spherePosZIndex++;
                     positiveZSphere++;
                     positiveXSphere = startPosition;
-                    if (spherePosZIndex == maxZ) {
+                    if (spherePosZIndex === maxZ) {
                         positiveZSphere = -1;
                         spherePosZIndex = 0;
                         positiveYSphere += 1.5;
                     }
                 }
-            } else if (nonzero_emotions[0].emotion == "Disappointed") {
+            } else if (nonzero_emotions[0].emotion === "Disappointed") {
                 this.renderedObjects.push( <DisappointedTriangle position={[negativeX, negativeY, negativeZ]} />);
                 negativeIndex++;
                 negativeX += 1;
-                if (negativeIndex == maxShapes) {
+                if (negativeIndex === maxShapes) {
                     negativeIndex = 0;
                     negZIndex++;
                     negativeZ++;
                     negativeX = startPosition;
-                    if (negZIndex == maxZ) {
+                    if (negZIndex === maxZ) {
                         negativeZ = -1;
                         negZIndex = 0;
                         negativeY -= 1;
                     }
                 }
-            } else if (nonzero_emotions[0].emotion == "Shy") {
+            } else if (nonzero_emotions[0].emotion === "Shy") {
                 this.renderedObjects.push( <ShySphere position={[(Math.random() * (negativeXSphere + 1)) + negativeXSphere, (Math.random() * (negativeYSphere + 1)) + negativeYSphere, (Math.random() * (negativeZSphere + 1)) + negativeZSphere]} />);
                 sphereNegativeIndex++;
                 negativeXSphere += 1.5;
-                if (sphereNegativeIndex == maxSphere) {
+                if (sphereNegativeIndex === maxSphere) {
                     sphereNegativeIndex = 0;
                     sphereNegZIndex++;
                     negativeZSphere++;
                     negativeXSphere = startPosition;
-                    if (sphereNegZIndex == maxZ) {
+                    if (sphereNegZIndex === maxZ) {
                         negativeZSphere = -1;
                         sphereNegZIndex = 0;
                         negativeYSphere += 1.5;
                     }
                 }
-            } else if (nonzero_emotions[0].emotion == "Frustrated") {
+            } else if (nonzero_emotions[0].emotion === "Frustrated") {
                 this.renderedObjects.push( <FrustratedTriangle position={[negativeX, negativeY, negativeZ]} />);
                 negativeIndex++;
                 negativeX += 1;
-                if (negativeIndex == maxShapes) {
+                if (negativeIndex === maxShapes) {
                     negativeIndex = 0;
                     negZIndex++;
                     negativeZ++;
                     negativeX = startPosition;
-                    if (negZIndex == maxZ) {
+                    if (negZIndex === maxZ) {
                         negativeZ = -1;
                         negZIndex = 0;
                         negativeY -= 1;
                     }
                 }
-            } else if (nonzero_emotions[0].emotion == "Anger") {
+            } else if (nonzero_emotions[0].emotion === "Anger") {
                 this.renderedObjects.push( <AngerTriangle position={[negativeX, negativeY, negativeZ]} />);
                 negativeIndex++;
                 negativeX += 1;
-                if (negativeIndex == maxShapes) {
+                if (negativeIndex === maxShapes) {
                     negativeIndex = 0;
                     negZIndex++;
                     negativeZ++;
                     negativeX = startPosition;
-                    if (negZIndex == maxZ) {
+                    if (negZIndex === maxZ) {
                         negativeZ = -1;
                         negZIndex = 0;
                         negativeY -= 1;
                     }
                 }
-            } else if (nonzero_emotions[0].emotion == "Playful") {
+            } else if (nonzero_emotions[0].emotion === "Playful") {
                 this.renderedObjects.push( <PlayfulSphere position={[(Math.random() * (positiveXSphere + 1)) + positiveXSphere, (Math.random() * (positiveYSphere + 1)) + positiveYSphere, (Math.random() * (positiveZSphere + 1)) + positiveZSphere]} />);
                 spherePositiveIndex++;
                 positiveXSphere += 1.5;
-                if (spherePositiveIndex == maxSphere) {
+                if (spherePositiveIndex === maxSphere) {
                     spherePositiveIndex = 0;
                     spherePosZIndex++;
                     positiveZSphere++;
                     positiveXSphere = startPosition;
-                    if (spherePosZIndex == maxZ) {
+                    if (spherePosZIndex === maxZ) {
                         positiveZSphere = -1;
                         spherePosZIndex = 0;
                         positiveYSphere += 1.5;
                     }
                 }
-            } else if (nonzero_emotions[0].emotion == "Irritated") {
+            } else if (nonzero_emotions[0].emotion === "Irritated") {
                 this.renderedObjects.push( <IrritatedCone position={[negativeX, negativeY, negativeZ]} />);
                 negativeIndex++;
                 negativeX += 1;
-                if (negativeIndex == maxShapes) {
+                if (negativeIndex === maxShapes) {
                     negativeIndex = 0;
                     negZIndex++;
                     negativeZ++;
                     negativeX = startPosition;
-                    if (negZIndex == maxZ) {
+                    if (negZIndex === maxZ) {
                         negativeZ = -1;
                         negZIndex = 0;
                         negativeY -= 1;
                     }
                 }
-            } else if (nonzero_emotions[0].emotion == "Sick") {
+            } else if (nonzero_emotions[0].emotion === "Sick") {
                 this.renderedObjects.push( <SickCone position={[negativeX, negativeY, negativeZ]} />);
                 negativeIndex++;
                 negativeX += 1;
-                if (negativeIndex == maxShapes) {
+                if (negativeIndex === maxShapes) {
                     negativeIndex = 0;
                     negZIndex++;
                     negativeZ++;
                     negativeX = startPosition;
-                    if (negZIndex == maxZ) {
+                    if (negZIndex === maxZ) {
                         negativeZ = -1;
                         negZIndex = 0;
                         negativeY -= 1;
                     }
                 }
-            } else if (nonzero_emotions[0].emotion == "Curiosity") {
+            } else if (nonzero_emotions[0].emotion === "Curiosity") {
                 this.renderedObjects.push( <CuriosityCylinder position={[positiveX, positiveY, positiveZ]} />);
                 positiveIndex++;
                 positiveX += 1;
-                if (positiveIndex == maxShapes) {
+                if (positiveIndex === maxShapes) {
                     positiveIndex = 0;
                     posZIndex++;
                     positiveZ++;
                     positiveX = startPosition;
-                    if (posZIndex == maxZ) {
+                    if (posZIndex === maxZ) {
                         positiveZ = -1;
                         posZIndex = 0;
                         positiveY += 1;
                     }
                 }
-            } else if (nonzero_emotions[0].emotion == "Violent") {
+            } else if (nonzero_emotions[0].emotion === "Violent") {
                 this.renderedObjects.push( <ViolentCone position={[negativeX, negativeY, negativeZ]} />);
                 negativeIndex++;
                 negativeX += 1;
-                if (negativeIndex == maxShapes) {
+                if (negativeIndex === maxShapes) {
                     negativeIndex = 0;
                     negZIndex++;
                     negativeZ++;
                     negativeX = startPosition;
-                    if (negZIndex == maxZ) {
+                    if (negZIndex === maxZ) {
                         negativeZ = -1;
                         negZIndex = 0;
                         negativeY -= 1;
                     }
                 }
-            } else if (nonzero_emotions[0].emotion == "Evil") {
+            } else if (nonzero_emotions[0].emotion === "Evil") {
                 this.renderedObjects.push( <EvilTriangle position={[negativeX, negativeY, negativeZ]} />);
                 negativeIndex++;
                 negativeX += 1;
-                if (negativeIndex == maxShapes) {
+                if (negativeIndex === maxShapes) {
                     negativeIndex = 0;
                     negZIndex++;
                     negativeZ++;
                     negativeX = startPosition;
-                    if (negZIndex == maxZ) {
+                    if (negZIndex === maxZ) {
                         negativeZ = -1;
                         negZIndex = 0;
                         negativeY -= 1;
                     }
                 }
-            } else if (nonzero_emotions[0].emotion == "Stressed") {
+            } else if (nonzero_emotions[0].emotion === "Stressed") {
                 this.renderedObjects.push( <StressedCube position={[negativeX, negativeY, negativeZ]} />);
                 negativeIndex++;
                 negativeX += 1;
-                if (negativeIndex == maxShapes) {
+                if (negativeIndex === maxShapes) {
                     negativeIndex = 0;
                     negZIndex++;
                     negativeZ++;
                     negativeX = startPosition;
-                    if (negZIndex == maxZ) {
+                    if (negZIndex === maxZ) {
                         negativeZ = -1;
                         negZIndex = 0;
                         negativeY -= 1;
                     }
                 }
-            } else if (nonzero_emotions[0].emotion == "Heartbroken") {
+            } else if (nonzero_emotions[0].emotion === "Heartbroken") {
                 this.renderedObjects.push( <HeartbrokenSphere position={[(Math.random() * (negativeXSphere + 1)) + negativeXSphere, (Math.random() * (negativeYSphere + 1)) + negativeYSphere, (Math.random() * (negativeZSphere + 1)) + negativeZSphere]} />);
                 sphereNegativeIndex++;
                 negativeXSphere += 1.5;
-                if (sphereNegativeIndex == maxSphere) {
+                if (sphereNegativeIndex === maxSphere) {
                     sphereNegativeIndex = 0;
                     sphereNegZIndex++;
                     negativeZSphere++;
                     negativeXSphere = startPosition;
-                    if (sphereNegZIndex == maxZ) {
+                    if (sphereNegZIndex === maxZ) {
                         negativeZSphere = -1;
                         sphereNegZIndex = 0;
                         negativeYSphere += 1.5;
                     }
                 }
-            } else if (nonzero_emotions[0].emotion == "Surprised") {
+            } else if (nonzero_emotions[0].emotion === "Surprised") {
                 this.renderedObjects.push( <SurprisedCube position={[positiveX, positiveY, positiveZ]} />);
                 positiveIndex++;
                 positiveX += 1;
-                if (positiveIndex == maxShapes) {
+                if (positiveIndex === maxShapes) {
                     positiveIndex = 0;
                     posZIndex++;
                     positiveZ++;
                     positiveX = startPosition;
-                    if (posZIndex == maxZ) {
+                    if (posZIndex === maxZ) {
                         positiveZ = -1;
                         posZIndex = 0;
                         positiveY += 1;
                     }
                 }
-            } else if (nonzero_emotions[0].emotion == "Guarded") {
+            } else if (nonzero_emotions[0].emotion === "Guarded") {
                 this.renderedObjects.push( <GuardedCube position={[negativeX, negativeY, negativeZ]} />);
                 negativeIndex++;
                 negativeX += 1;
-                if (negativeIndex == maxShapes) {
+                if (negativeIndex === maxShapes) {
                     negativeIndex = 0;
                     negZIndex++;
                     negativeZ++;
                     negativeX = startPosition;
-                    if (negZIndex == maxZ) {
+                    if (negZIndex === maxZ) {
                         negativeZ = -1;
                         negZIndex = 0;
                         negativeY -= 1;
                     }
                 }
-            } else if (nonzero_emotions[0].emotion == "Strong") {
+            } else if (nonzero_emotions[0].emotion === "Strong") {
                 this.renderedObjects.push( <StrongCone position={[positiveX, positiveY, positiveZ]} />);
                 positiveIndex++;
                 positiveX += 1;
-                if (positiveIndex == maxShapes) {
+                if (positiveIndex === maxShapes) {
                     positiveIndex = 0;
                     posZIndex++;
                     positiveZ++;
                     positiveX = startPosition;
-                    if (posZIndex == maxZ) {
+                    if (posZIndex === maxZ) {
                         positiveZ = -1;
                         posZIndex = 0;
                         positiveY += 1;
                     }
                 }
-            } else if (nonzero_emotions[0].emotion == "Scared") {
+            } else if (nonzero_emotions[0].emotion === "Scared") {
                 this.renderedObjects.push( <ScaredCone position={[negativeX, negativeY, negativeZ]} />);
                 negativeIndex++;
                 negativeX += 1;
-                if (negativeIndex == maxShapes) {
+                if (negativeIndex === maxShapes) {
                     negativeIndex = 0;
                     negZIndex++;
                     negativeZ++;
                     negativeX = startPosition;
-                    if (negZIndex == maxZ) {
+                    if (negZIndex === maxZ) {
                         negativeZ = -1;
                         negZIndex = 0;
                         negativeY -= 1;
                     }
                 }
-            } else if (nonzero_emotions[0].emotion == "Excited") {
+            } else if (nonzero_emotions[0].emotion === "Excited") {
                 this.renderedObjects.push( <ExcitedSphere position={[(Math.random() * (positiveXSphere + 1)) + positiveXSphere, (Math.random() * (positiveYSphere + 1)) + positiveYSphere, (Math.random() * (positiveZSphere + 1)) + positiveZSphere]} />);
                 spherePositiveIndex++;
                 positiveXSphere += 1.5;
-                if (spherePositiveIndex == maxSphere) {
+                if (spherePositiveIndex === maxSphere) {
                     spherePositiveIndex = 0;
                     spherePosZIndex++;
                     positiveZSphere++;
                     positiveXSphere = startPosition;
-                    if (spherePosZIndex == maxZ) {
+                    if (spherePosZIndex === maxZ) {
                         positiveZSphere = -1;
                         spherePosZIndex = 0;
                         positiveYSphere += 1.5;
