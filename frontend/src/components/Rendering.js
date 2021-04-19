@@ -521,8 +521,8 @@ function ExcitedSphere(props) {
 
 
 const Rendering = ({array}) => {
-    //console.log("called")
-    //console.log(array)
+    console.log("Array:")
+    console.log(array)
     if (!array) {
         return null;
     }
@@ -546,7 +546,7 @@ const Rendering = ({array}) => {
     let positiveXSphere = startPosition;
     let negativeX = startPosition;
     let positiveX = startPosition;
-    
+
     for (let i = 0; i < array.length; i++) {
         let emotions = array[i].emotions;
         let nonzero_emotions = []

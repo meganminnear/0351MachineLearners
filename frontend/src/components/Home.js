@@ -49,8 +49,8 @@ class Home extends React.Component {
     this.closeCSVDownloadModal = this.closeCSVDownloadModal.bind(this);
     this.openShareModal = this.openShareModal.bind(this);
     this.closeShareModal = this.closeShareModal.bind(this);
-    this.chartRef = React.createRef();
     this.saveChart = this.saveChart.bind(this);
+    this.saveAbstract = this.saveAbstract.bind(this);
     this.callServer = this.callServer.bind(this);
     this.triggerDownload = this.triggerDownload.bind(this);
   }
@@ -101,6 +101,16 @@ class Home extends React.Component {
     a.setAttribute("target", "_blank");
 
     a.dispatchEvent(evt);
+  }
+
+
+  saveAbstract() {
+    let canvas = document.getElementById("ThreeDContainer").children[0].children[0];
+    let imgURI = canvas.toDataURL("image/png")
+    let link = document.createElement('a');
+    link.download = 'abstract.png';
+    link.href = imgURI
+    link.click();
   }
 
   saveChart() {
@@ -206,7 +216,7 @@ class Home extends React.Component {
                 <Tabs defaultActiveKey="linear" id="figure-tabs" transition={false}>
                   <Tab eventKey="linear" title="linear">
                     <div id="chartID">
-                      <VictoryChart ref={this.chartRef} theme={VictoryTheme.material}>
+                      <VictoryChart theme={VictoryTheme.material}>
                         <VictoryLegend orientation = {"horizontal"} x={100} y={20} data = {[
                           {name: "Sentiment", symbol: {fill:"black"}},
                           {name: "Running Average", symbol: {fill:"red"}}]}/>
@@ -250,11 +260,9 @@ class Home extends React.Component {
                         <Button variant="secondary" onClick={this.close3DImageDownloadModal}>
                           Cancel
                         </Button>
-                        <Router>
-                            <Link to="/download">
-                              <Download/>
-                            </Link>
-                        </Router>
+                        <Button onClick={this.saveAbstract}>
+                          Download
+                        </Button>
                       </Modal.Footer>
                     </Modal>
                   </Tab>
