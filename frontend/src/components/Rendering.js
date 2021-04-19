@@ -34,12 +34,6 @@ function MirthSphere(props) {
 function DiscontentmentTriangle(props) {
     const mesh = useRef()
 
-    let rand = (Math.random() * 10.0) + 0.01;
-
-    useFrame(() => {
-        mesh.current.rotation.x = mesh.current.rotation.y = rand
-    })
-
     return (
         <mesh
             {...props}
@@ -96,11 +90,6 @@ function LoveSphere(props) {
 function ApprovalCube(props) {
     const mesh = useRef()
 
-    let rand = (Math.random() * 10.0) + 0.01;
-
-    useFrame(() => {
-        mesh.current.rotation.x = mesh.current.rotation.y = rand
-    })
 
   return (
         <mesh
@@ -128,12 +117,6 @@ function HappinessSphere(props) {
 
 function ConfidenceCube(props) {
     const mesh = useRef()
-
-    const rand = (Math.random() * 10.0) + 0.01;
-
-    useFrame(() => {
-        mesh.current.rotation.x = mesh.current.rotation.y = rand
-    })
 
     return (
         <mesh
@@ -191,12 +174,6 @@ function EmbarrassedSphere(props) {
 function BoredCube(props) {
     const mesh = useRef()
 
-    let rand = (Math.random() * 10.0) + 0.01;
-
-    useFrame(() => {
-        mesh.current.rotation.x = mesh.current.rotation.y = rand
-    })
-
     return (
         <mesh
             {...props}
@@ -221,15 +198,9 @@ function ContentSphere(props) {
     )
 
 }
-//BUGGED: CubeBufferGeometry is not part of the THREE namespace! Did you forget to extend? Example: https://www.bookbrowse.com/excerpts/index.cfm/book_number/453/page_number/3/harry-potter-and-the-chamber-of-secrets#excerpt
+
 function CelebrationCube(props) {
     const mesh = useRef()
-
-    let rand = (Math.random() * 10.0) + 0.01;
-
-    useFrame(() => {
-        mesh.current.rotation.x = mesh.current.rotation.y = rand
-    })
 
     return (
         <mesh
@@ -259,12 +230,6 @@ function HopelessSphere(props) {
 function NervousCone(props) {
     const mesh = useRef()
 
-    let rand = (Math.random() * 10.0) + 0.01;
-
-    useFrame(() => {
-        mesh.current.rotation.x = mesh.current.rotation.y = rand
-    })
-
     return (
         <mesh
             {...props}
@@ -293,12 +258,6 @@ function HopeSphere(props) {
 function ConfusedCube(props) {
     const mesh = useRef()
 
-    let rand = (Math.random() * 10.0) + 0.01;
-
-    useFrame(() => {
-        mesh.current.rotation.x = mesh.current.rotation.y = rand
-    })
-
     return (
         <mesh
             {...props}
@@ -326,12 +285,6 @@ function AffectionateSphere(props) {
 
 function DisappointedTriangle(props) {
     const mesh = useRef()
-
-    let rand = (Math.random() * 10.0) + 0.01;
-
-    useFrame(() => {
-        mesh.current.rotation.x = mesh.current.rotation.y = rand
-    })
     
 
     return (
@@ -362,12 +315,6 @@ function ShySphere(props) {
 function FrustratedTriangle(props) {
     const mesh = useRef()
 
-    let rand = (Math.random() * 10.0) + 0.01;
-
-    useFrame(() => {
-        mesh.current.rotation.x = mesh.current.rotation.y = rand
-    })
-
     return (
         <mesh
             {...props}
@@ -381,12 +328,6 @@ function FrustratedTriangle(props) {
 
 function AngerTriangle(props) {
     const mesh = useRef()
-
-    let rand = (Math.random() * 10.0) + 0.01;
-
-    useFrame(() => {
-        mesh.current.rotation.x = mesh.current.rotation.y = rand
-    })
 
     return (
         <mesh
@@ -416,12 +357,6 @@ function PlayfulSphere(props) {
 function IrritatedCone(props) {
     const mesh = useRef()
 
-    let rand = (Math.random() * 10.0) + 0.01;
-
-    useFrame(() => {
-        mesh.current.rotation.x = mesh.current.rotation.y = rand
-    })
-
     return (
         <mesh
             {...props}
@@ -435,12 +370,6 @@ function IrritatedCone(props) {
 
 function SickCone(props) {
     const mesh = useRef()
-
-    let rand = (Math.random() * 10.0) + 0.01;
-
-    useFrame(() => {
-        mesh.current.rotation.x = mesh.current.rotation.y = rand
-    })
 
     return (
         <mesh
@@ -456,12 +385,6 @@ function SickCone(props) {
 function CuriosityCylinder(props) {
     const mesh = useRef()
 
-    let rand = (Math.random() * 10.0) + 0.01;
-
-    useFrame(() => {
-        mesh.current.rotation.x = mesh.current.rotation.y = rand
-    })
-
     return (
         <mesh
             {...props}
@@ -475,12 +398,6 @@ function CuriosityCylinder(props) {
 
 function ViolentCone(props) {
     const mesh = useRef()
-
-    let rand = (Math.random() * 10.0) + 0.01;
-
-    useFrame(() => {
-        mesh.current.rotation.x = mesh.current.rotation.y = rand
-    })
 
     return (
         <mesh
@@ -496,12 +413,6 @@ function ViolentCone(props) {
 function EvilTriangle(props) {
     const mesh = useRef()
 
-    let rand = (Math.random() * 10.0) + 0.01;
-
-    useFrame(() => {
-        mesh.current.rotation.x = mesh.current.rotation.y = rand
-    })
-
     return (
         <mesh
             {...props}
@@ -515,12 +426,6 @@ function EvilTriangle(props) {
 
 function StressedCube(props) {
     const mesh = useRef()
-
-    let rand = (Math.random() * 10.0) + 0.01;
-
-    useFrame(() => {
-        mesh.current.rotation.x = mesh.current.rotation.y = rand
-    })
 
     return (
         <mesh
@@ -550,12 +455,6 @@ function HeartbrokenSphere(props) {
 function SurprisedCube(props) {
     const mesh = useRef()
 
-    let rand = (Math.random() * 10.0) + 0.01;
-
-    useFrame(() => {
-        mesh.current.rotation.x = mesh.current.rotation.y = rand
-    })
-
     return (
         <mesh
             {...props}
@@ -569,12 +468,6 @@ function SurprisedCube(props) {
 
 function GuardedCube(props) {
     const mesh = useRef()
-
-    let rand = (Math.random() * 10.0) + 0.01;
-
-    useFrame(() => {
-        mesh.current.rotation.x = mesh.current.rotation.y = rand
-    })
 
     return (
         <mesh
@@ -590,12 +483,6 @@ function GuardedCube(props) {
 function StrongCone(props) {
     const mesh = useRef()
 
-    let rand = (Math.random() * 10.0) + 0.01;
-
-    useFrame(() => {
-        mesh.current.rotation.x = mesh.current.rotation.y = rand
-    })
-
     return (
         <mesh
             {...props}
@@ -609,12 +496,6 @@ function StrongCone(props) {
 
 function ScaredCone(props) {
     const mesh = useRef()
-
-    let rand = (Math.random() * 10.0) + 0.01;
-
-    useFrame(() => {
-        mesh.current.rotation.x = mesh.current.rotation.y = rand
-    })
 
     return (
         <mesh
