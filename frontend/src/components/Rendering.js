@@ -292,7 +292,7 @@ function AffectionateSphere(props) {
 
 function DisappointedTriangle(props) {
     const mesh = useRef()
-    
+
 
     return (
         <mesh
@@ -544,8 +544,8 @@ function ExcitedSphere(props) {
 
 
 const Rendering = ({array}) => {
-    //console.log("called")
-    //console.log(array)
+    console.log("Array:")
+    console.log(array)
     if (!array) {
         return null;
     }
@@ -579,7 +579,7 @@ const Rendering = ({array}) => {
     let positiveZSphere = -1;
     let negativeZ = -1;
     let positiveZ = -1;
-    
+
     for (let i = 0; i < array.length; i++) {
         let emotions = array[i].emotions;
         let nonzero_emotions = []
