@@ -55,6 +55,7 @@ class Home extends React.Component {
     this.callServer = this.callServer.bind(this);
     this.triggerDownload = this.triggerDownload.bind(this);
     this.mainTextAreaRef = React.createRef();
+    this.saveCSV = this.saveCSV.bind(this);
     // this.updateInputString = this.updateInputString.bind(this);
   }
 
@@ -115,6 +116,35 @@ class Home extends React.Component {
     a.dispatchEvent(evt);
   }
 
+  saveCSV() {
+    const tokens = this.state.tokens
+    let csvContent = "data:text/csv;charset=utf-8,"
+    if (tokens.length > 0) {
+      csvContent += "Phrase,Polarity,," + Object.keys(tokens[0].emotions) + "\n";
+      let i;
+      for (i = 0; i < tokens.length; i++) {
+
+        let line = "\"" + tokens[i].text.replace(/"/g, "\"\"") + "\"," + this.state.diagramData.sentiments[i+1] + ",," + Object.values(tokens[i].emotions) + "\n";
+        csvContent += line;
+        console.log(line)
+      }
+      //console.log(headers);
+
+      console.log(csvContent);
+      /*csvContent += tokens.map(e => {
+        console.log(typeof e);
+        e.join(",");
+      }).join("\n");*/
+    }
+
+
+
+    var encodedUri = encodeURI(csvContent);
+    let link = document.createElement('a');
+    link.download = 'data.csv';
+    link.href = encodedUri
+    link.click();
+  }
 
   saveAbstract() {
     let canvas = document.getElementById("ThreeDContainer").children[0].children[0];
@@ -302,7 +332,7 @@ class Home extends React.Component {
             <Button variant="secondary" onClick={this.closeCSVDownloadModal}>
               Cancel
             </Button>
-            <Button variant="primary" onClick={this.downloadImageFile}>
+            <Button variant="primary" onClick={this.saveCSV}>
                 Download
               </Button>
           </Modal.Footer>
