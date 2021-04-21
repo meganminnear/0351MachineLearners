@@ -25,11 +25,12 @@ p {
     padding-top: 15px;
 }
 
-h3 {
+h4 {
     font-family: Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif;
     margin: auto;
     color: #797979;
     padding-top: 15px;
+    padding-bottom: 15px;
 }
 
 .row {

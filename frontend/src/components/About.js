@@ -4,6 +4,15 @@ import "./About.css";
 
 import profileImage from './profile-placeholder.png'
 
+import Lillian from './TeamPhotos/Lillian.jpg'
+import Heather from './TeamPhotos/Heather.jpg'
+import Megan from './TeamPhotos/Megan.jpg'
+import Neil from './TeamPhotos/Neil.jpg'
+import Patrick from './TeamPhotos/Patrick.jpg'
+import Shaan from './TeamPhotos/Shaan.jpg'
+import Yaewon from './TeamPhotos/Yaewon.jpg'
+
+
 import Image from 'react-bootstrap/Image';
 
 
@@ -22,53 +31,47 @@ class About extends React.Component {
                 <div className="row">
                     <div className="column">
                         <div className="profileCard">
-                            <Image width="100%" src={profileImage} ref="abstractImage" />
-                            <h3>Name</h3>
-                            <p>Description</p>
+                            <Image width="100%" src={Lillian} ref="abstractImage" />
+                            <h4>Lillian-Yvonne Bertram</h4>
                         </div>
                     </div>
                     <div className="column">
                         <div className="profileCard">
-                            <Image width="100%" src={profileImage} ref="abstractImage" />
-                            <h3>Name</h3>
-                            <p>Description</p>
+                            <Image width="100%" src={Heather} ref="profileImage" />
+                            <h4 style={{paddingTop: 29, paddingBottom: 29}}>Heather Zhu</h4>
                         </div>
                     </div>
                     <div className="column">
                         <div className="profileCard">
-                            <Image width="100%" src={profileImage} ref="abstractImage" />
-                            <h3>Name</h3>
-                            <p>Description</p>
+                            <Image width="100%" src={Megan} ref="abstractImage" />
+                            <h4 style={{paddingTop: 29, paddingBottom: 29}}>Megan Minnear</h4>
                         </div>
                     </div>
                     <div className="column">
                         <div className="profileCard">
-                            <Image width="100%" src={profileImage} ref="abstractImage" />
-                            <h3>Name</h3>
-                            <p>Description</p>
+                            <Image width="100%" src={Neil} ref="abstractImage" />
+                            <h4>Neil Thistlethwaite</h4>
                         </div>
                     </div>
                     <div className="column">
                         <div className="profileCard">
-                            <Image width="100%" src={profileImage} ref="abstractImage" />
-                            <h3>Name</h3>
-                            <p>Description</p>
+                            <Image width="100%" src={Patrick} ref="abstractImage" />
+                            <h4 style={{paddingTop: 29, paddingBottom: 29}}>Patrick Li</h4>
                         </div>
                     </div>
                     <div className="column">
                         <div className="profileCard">
-                            <Image width="100%" src={profileImage} ref="abstractImage" />
-                            <h3>Name</h3>
-                            <p>Description</p>
+                            <Image width="100%" src={Shaan} ref="abstractImage" />
+                            <h4 style={{paddingTop: 29, paddingBottom: 29}}>Shaan Gill</h4>
                         </div>
                     </div>
                     <div className="column">
                         <div className="profileCard">
-                            <Image width="100%" src={profileImage} ref="abstractImage" />
-                            <h3>Name</h3>
-                            <p>Description</p>
+                            <Image width="100%" src={Yaewon} ref="abstractImage" />
+                            <h4 style={{paddingTop: 29, paddingBottom: 29}}>Yaewon Ahn</h4>
                         </div>
                     </div>
+                    
                 </div>
                 <h2>additional resources</h2>
                 <ul>
