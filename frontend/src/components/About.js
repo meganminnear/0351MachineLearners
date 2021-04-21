@@ -38,13 +38,13 @@ class About extends React.Component {
                     <div className="column">
                         <div className="profileCard">
                             <Image width="100%" src={Heather} ref="profileImage" />
-                            <h4 style={{paddingTop: 29, paddingBottom: 29}}>Heather Zhu</h4>
+                            <h4>Heather Zhu</h4>
                         </div>
                     </div>
                     <div className="column">
                         <div className="profileCard">
                             <Image width="100%" src={Megan} ref="abstractImage" />
-                            <h4 style={{paddingTop: 29, paddingBottom: 29}}>Megan Minnear</h4>
+                            <h4>Megan Minnear</h4>
                         </div>
                     </div>
                     <div className="column">
@@ -56,19 +56,19 @@ class About extends React.Component {
                     <div className="column">
                         <div className="profileCard">
                             <Image width="100%" src={Patrick} ref="abstractImage" />
-                            <h4 style={{paddingTop: 29, paddingBottom: 29}}>Patrick Li</h4>
+                            <h4>Patrick Li</h4>
                         </div>
                     </div>
                     <div className="column">
                         <div className="profileCard">
                             <Image width="100%" src={Shaan} ref="abstractImage" />
-                            <h4 style={{paddingTop: 29, paddingBottom: 29}}>Shaan Gill</h4>
+                            <h4>Shaan Gill</h4>
                         </div>
                     </div>
                     <div className="column">
                         <div className="profileCard">
                             <Image width="100%" src={Yaewon} ref="abstractImage" />
-                            <h4 style={{paddingTop: 29, paddingBottom: 29}}>Yaewon Ahn</h4>
+                            <h4>Yaewon Ahn</h4>
                         </div>
                     </div>
                     
