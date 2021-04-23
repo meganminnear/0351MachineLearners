@@ -299,7 +299,7 @@ class Home extends React.Component {
                     {/*3D buttons and modal*/}
                     <Button className="mx-2" id="green" variant="primary" onClick={this.openCSVDownloadModal}>download CSV</Button>
                     <Button className="mx-2" id="pink" variant="primary" onClick={this.openShareModal}>share!</Button>
-                    <Button className="mx-2" id="green" variant="primary" onClick={this.open3DImageDownloadModal}>download image</Button>
+                    {/*<Button className="mx-2" id="green" variant="primary" onClick={this.open3DImageDownloadModal}>download image</Button>*/}
                     <Modal show={this.state.show3DImageDownloadModal} onHide={this.close3DImageDownloadModal}>
                       <Modal.Header closeButton>
                         <Modal.Title>Download Image?</Modal.Title>
