@@ -23,6 +23,7 @@ h2 {
 p {
     font-weight: normal;
     padding-top: 15px;
+    padding-bottom: 15px;
 }
 
 h4 {
@@ -30,7 +31,6 @@ h4 {
     margin: auto;
     color: #797979;
     padding-top: 15px;
-    padding-bottom: 15px;
 }
 
 .row {

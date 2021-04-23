@@ -33,42 +33,49 @@ class About extends React.Component {
                         <div className="profileCard">
                             <Image width="100%" src={Lillian} ref="abstractImage" />
                             <h4>Lillian-Yvonne Bertram</h4>
+                            <p><a href="https://www.lillianyvonnebertram.com">Website</a></p>
                         </div>
                     </div>
                     <div className="column">
                         <div className="profileCard">
                             <Image width="100%" src={Heather} ref="profileImage" />
                             <h4>Heather Zhu</h4>
+                            <p><a href="https://www.linkedin.com/in/heatherzhu/">LinkedIn</a></p>
                         </div>
                     </div>
                     <div className="column">
                         <div className="profileCard">
                             <Image width="100%" src={Megan} ref="abstractImage" />
                             <h4>Megan Minnear</h4>
+                            <p><a href="https://www.linkedin.com/in/megan-minnear">LinkedIn</a></p>
                         </div>
                     </div>
                     <div className="column">
                         <div className="profileCard">
                             <Image width="100%" src={Neil} ref="abstractImage" />
                             <h4>Neil Thistlethwaite</h4>
+                            <p><a href="https://www.linkedin.com/in/nthistle00/">LinkedIn</a></p>
                         </div>
                     </div>
                     <div className="column">
                         <div className="profileCard">
                             <Image width="100%" src={Patrick} ref="abstractImage" />
                             <h4>Patrick Li</h4>
+                            <p><a href="https://www.linkedin.com/in/patrick-li-0/">LinkedIn</a></p>
                         </div>
                     </div>
                     <div className="column">
                         <div className="profileCard">
                             <Image width="100%" src={Shaan} ref="abstractImage" />
                             <h4>Shaan Gill</h4>
+                            <p><a href="https://www.linkedin.com/in/shaan-gill-10742b186/">LinkedIn</a></p>
                         </div>
                     </div>
                     <div className="column">
                         <div className="profileCard">
                             <Image width="100%" src={Yaewon} ref="abstractImage" />
                             <h4>Yaewon Ahn</h4>
+                            <p><a href="https://www.linkedin.com/in/yaewon-ahn-75a53b171/">LinkedIn</a></p>
                         </div>
                     </div>
                     
