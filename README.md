@@ -16,7 +16,7 @@
 -	Rendered shapes no longer have their positions re-randomized every keystroke into the textbox.
 
 ### Known Bugs
--	Downloading the abstract image currently downloads an empty image.
+-	Downloading the abstract image currently downloads an empty image. The visibility for download button for the abstract tab is currently removed/commented out.
 -	Downloading the linear image may not work for some browsers.
 
 ## Install Guide
